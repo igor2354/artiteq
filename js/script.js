@@ -163,7 +163,11 @@ if (document.querySelectorAll(".blog__slider").length > 0) {
                         slidesPerView: 2,
                         spaceBetween: 30,
                     },
-                }
+                },
+                pagination: {
+                    el: '.blog__pagination',
+                    clickable: true,
+                },
             })
         } else {
             if (document.querySelector(".blog__slider").classList.contains("swiper-container-initialized")) {
@@ -287,7 +291,9 @@ openButton.forEach(element => {
         body.classList.add("lock-modal");
 
         if (this.dataset.popup == "domain") {
-            document.querySelector(`#${this.dataset.popup}`).querySelector(".popup-domain__list").style.height = `${window.innerHeight - document.querySelector(`#${this.dataset.popup}`).querySelector(".popup-domain__wrap").offsetHeight - 40}px`;
+            let domainList = document.querySelector(`#${this.dataset.popup}`).querySelector(".popup-domain__list");
+            let domainWrap = document.querySelector(`#${this.dataset.popup}`).querySelector(".popup-domain__wrap");
+            domainList.style.height = `${window.innerHeight - domainWrap.offsetHeight - 40}px`;
         }
     });
 });
@@ -420,6 +426,57 @@ let dropMenuLevelOne = buttonCatalogMobile.parentNode.querySelector(".catalog-me
 //     dropMenuLevelOne.classList.toggle("drop")
 // })
 
+//Анимация иконок 
+let arrAnimIcon = Array.prototype.slice.call(document.querySelectorAll(".element-anim"));
+
+arrAnimIcon.forEach(element => {
+    let activeAnim = true;
+    element.addEventListener("mouseenter", () => {
+        if (activeAnim == true) {
+            Array.prototype.slice.call(element.querySelectorAll(".anim-item")).forEach(el => {
+                el.beginElement();
+            })
+            activeAnim = false;
+            setTimeout(() => {
+                activeAnim = true;
+            }, element.getAttribute("data-anim-time"))
+        }
+    })
+});
+
+// document.querySelector(".catalog-menu__mobil").addEventListener("click", function () {
+//     let dropMenu = this.nextElementSibling;
+//     let windowHeight = window.innerHeight - 140;
+
+//     if (dropMenu.style.display != "block") {
+//         dropMenu.style.display = "block";
+//         dropMenu.style.overflow = "hidden";
+//         dropMenu.style.maxHeight = "0";
+//         let heightElem = dropMenu.scrollHeight > windowHeight ? windowHeight : dropMenu.scrollHeight;
+//         let countHeight = 0;
+//         let timer = setInterval(() => {
+//             dropMenu.style.maxHeight = `${countHeight + 3}px`;
+//             countHeight += 3;
+//             if (countHeight >= heightElem) {
+//                 clearInterval(timer)
+//                 dropMenu.style.overflow = "";
+//                 dropMenu.style.maxHeight = windowHeight + "px";
+//             }
+//         }, 1.5);
+//     } else {
+//         let heightElem = dropMenu.scrollHeight > windowHeight ? windowHeight : dropMenu.scrollHeight;
+//         let countHeight = heightElem;
+//         let timer = setInterval(() => {
+//             dropMenu.style.maxHeight = `${countHeight - 3}px`;
+//             countHeight -= 3;
+//             if (countHeight <= 0) {
+//                 clearInterval(timer)
+//                 dropMenu.style.display = "none";
+//                 dropMenu.style.maxHeight = "";
+//             }
+//         }, 1.5);
+//     }
+// })
 
 $(document).ready(function () {
     $(".catalog-menu__mobil").on("click", function () {
