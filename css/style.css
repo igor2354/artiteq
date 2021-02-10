@@ -137,7 +137,10 @@ h2 {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  overflow: hidden; }
+  overflow: hidden; 
+  -webkit-appearance: none;
+-webkit-border-radius: 0;
+}
   .main-btn:hover {
     background: #0086d2;
     border-color: #0086d2; }
