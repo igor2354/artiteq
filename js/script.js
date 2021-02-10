@@ -180,6 +180,27 @@ if (document.querySelectorAll(".blog__slider").length > 0) {
     activeBlogSlider();
 }
 
+var sliderBigProduct = new Swiper('.slider-big-product', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loopAdditionalSlides: 10,
+    pagination: {
+        el: '.slider-big-product__pagination',
+        clickable: true,
+    },
+})
+
+var sliderSmallProduct = new Swiper('.slider-small-product', {
+    loop: true,
+    slidesPerView: 4,
+    spaceBetween: 15,
+    loopAdditionalSlides: 10,
+    slideToClickedSlide: true,
+})
+
+sliderBigProduct.controller.control = sliderSmallProduct;
+sliderSmallProduct.controller.control = sliderBigProduct;
 
 
 // Ограничение текта отзывов
@@ -329,31 +350,38 @@ popupOverlay.addEventListener("click", function () {
 let itemDomain = Array.prototype.slice.call(document.querySelectorAll(".popup-domain__item"));
 
 itemDomain.sort(function (a, b) {
+    // сортируем от а до я
     if (a.querySelector("a").textContent[0] < b.querySelector("a").textContent[0]) return -1;
     if (a.querySelector("a").textContent[0] > b.querySelector("a").textContent[0]) return 1;
     return 0;
 })
 
 itemDomain.forEach((el, index, array) => {
+    // берем перую букву
     let wordFirst = el.querySelector("a").textContent[0];
 
+    // берем следующий элемент после текущего
     let elemInsert = array[index + 1] ? array[index + 1].querySelector("a").textContent[0] : null;
 
+    // создаем обертку для буквы
     let wordAppend = document.createElement("span");
 
     wordAppend.classList.add("first-word");
 
+    // первому элементу сразу вставляем букву
     if (index == 0) {
         wordAppend.textContent = wordFirst;
         el.prepend(wordAppend);
     }
 
+    // проверяем отличаются ли первые буквы текущего и следующего элемента
     if (wordFirst != elemInsert) {
         wordAppend.textContent = elemInsert;
 
         array[index + 1] ? array[index + 1].prepend(wordAppend) : null;
     }
 
+    // вставляем букву слдеующему элементу за текущим
     el.parentNode.append(el);
 
 });
@@ -379,53 +407,6 @@ match[0].addListener(moveFirstWordMobil);
 moveFirstWordMobil();
 
 
-// Меню каталога для мобилок
-
-let menuCatalogItem = Array.prototype.slice.call(document.querySelectorAll(".catalog-menu__item"));
-
-function clickCatalogMenuMobile(e) {
-    if (this.classList.contains("active")) {
-        menuCatalogItem.forEach(el => el.classList.remove("active"));
-        this.classList.remove("active");
-    } else {
-        menuCatalogItem.forEach(el => el.classList.remove("active"));
-        this.classList.add("active");
-    }
-}
-
-function activeClickCatalogMenuMobilResize() {
-    if (match[0].matches) {
-        menuCatalogItem.forEach((el) => el.addEventListener("click", clickCatalogMenuMobile, false));
-    } else {
-        menuCatalogItem.forEach((el) => {
-            el.removeEventListener("click", clickCatalogMenuMobile, false);
-            if (el.classList.contains("active")) {
-                el.classList.remove("active");
-            }
-        });
-    }
-}
-
-match[0].addListener(activeClickCatalogMenuMobilResize);
-activeClickCatalogMenuMobilResize();
-
-let buttonCatalogMobile = document.querySelector(".catalog-menu__mobil");
-let dropMenuLevelOne = buttonCatalogMobile.parentNode.querySelector(".catalog-menu__wrap");
-
-// buttonCatalogMobile.addEventListener('click', () => {
-//     if (dropMenuLevelOne.classList.contains('container--active')) {
-//         dropMenuLevelOne.classList.remove('container--active');
-//         dropMenuLevelOne.style.maxHeight = 0;
-//     } else {
-//         dropMenuLevelOne.classList.add('container--active');
-//         dropMenuLevelOne.style.maxHeight = dropMenuLevelOne.scrollHeight + 'px';
-//     }
-// });
-
-// buttonCatalogMobile.addEventListener("click", () => {
-//     dropMenuLevelOne.classList.toggle("drop")
-// })
-
 //Анимация иконок 
 let arrAnimIcon = Array.prototype.slice.call(document.querySelectorAll(".element-anim"));
 
@@ -444,60 +425,57 @@ arrAnimIcon.forEach(element => {
     })
 });
 
-// document.querySelector(".catalog-menu__mobil").addEventListener("click", function () {
-//     let dropMenu = this.nextElementSibling;
-//     let windowHeight = window.innerHeight - 140;
-
-//     if (dropMenu.style.display != "block") {
-//         dropMenu.style.display = "block";
-//         dropMenu.style.overflow = "hidden";
-//         dropMenu.style.maxHeight = "0";
-//         let heightElem = dropMenu.scrollHeight > windowHeight ? windowHeight : dropMenu.scrollHeight;
-//         let countHeight = 0;
-//         let timer = setInterval(() => {
-//             dropMenu.style.maxHeight = `${countHeight + 3}px`;
-//             countHeight += 3;
-//             if (countHeight >= heightElem) {
-//                 clearInterval(timer)
-//                 dropMenu.style.overflow = "";
-//                 dropMenu.style.maxHeight = windowHeight + "px";
-//             }
-//         }, 1.5);
-//     } else {
-//         let heightElem = dropMenu.scrollHeight > windowHeight ? windowHeight : dropMenu.scrollHeight;
-//         let countHeight = heightElem;
-//         let timer = setInterval(() => {
-//             dropMenu.style.maxHeight = `${countHeight - 3}px`;
-//             countHeight -= 3;
-//             if (countHeight <= 0) {
-//                 clearInterval(timer)
-//                 dropMenu.style.display = "none";
-//                 dropMenu.style.maxHeight = "";
-//             }
-//         }, 1.5);
-//     }
-// })
-
 $(document).ready(function () {
+
+    // Меню каталога
+
+    let matchCatalog = window.matchMedia("(max-width: 1170px)");
+
     $(".catalog-menu__mobil").on("click", function () {
         $(this).next().slideToggle();
         $(this).next().css({ "max-height": `${$(window).innerHeight() - 140}px` });
     })
 
+    function activeClickCatalogMenuMobilResize() {
+        if (matchCatalog.matches) {
+            $(".catalog-menu__link").on("click", function () {
+                if ($(this).next().hasClass("active")) {
+                    $(this).next().slideUp();
+                    $(this).next().removeClass("active");
+                } else {
+                    $(".catalog-menu__link").next().slideUp();
+                    $(".catalog-menu__link").next().removeClass("active");
+                    $(this).next().addClass("active");
+                    $(this).next().slideDown();
+                }
+            })
+        } else {
+            $(".catalog-menu__link").off()
+            $(".catalog-menu__link").next().attr('style', '');
+        }
+    }
+
+    matchCatalog.addListener(activeClickCatalogMenuMobilResize);
+    activeClickCatalogMenuMobilResize();
+
+    // Галерея
+
     $("#lightgallery").lightGallery({
         selector: 'a'
     });
+
+    // Мобильное меню
 
     $('#dl-menu').dlmenu({
         backLabel: "назад",
     });
 
-    // КАСТОМНЫЙ СКРОЛЛБАР
+    // Кастомный скроллбар
     $(".popup-domain__list").mCustomScrollbar({
         theme: "my-theme",
     });
 
-    //===============ANIMATION SCROLL======================
+    // Анимация скролла
     const animItems = $(".anim-items");
 
     if (animItems.length > 0) {
@@ -527,6 +505,8 @@ $(document).ready(function () {
         setTimeout(animOnScroll, 0);
     }
 
+    // Скролл к верху страницы
+
     $(window).scroll(function (e) {
         if ($(this).scrollTop() > 0) {
             $('#scroller').fadeIn();
@@ -534,13 +514,14 @@ $(document).ready(function () {
             $('#scroller').fadeOut();
         }
     });
+
     $('#scroller').click(function (e) {
         e.preventDefault();
         $('body,html').animate({ scrollTop: 0 }, 400);
     });
 
 
-    //======= INPUT MASK
+    // Маска номера телефона
     $("input[type=tel]").inputmask({
         mask: "+7 (Z99) 999-99-99",
         definitions: {
