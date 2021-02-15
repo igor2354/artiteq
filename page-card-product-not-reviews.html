@@ -409,7 +409,7 @@
                         <div class="product__info">
                             <div class="product__article article">Артикул: <span>1111</span></div>
                             <div class="product__barcode barcode">Штрихкод: <span>41122</span></div>
-                            <div class="product__quantity quantity-stock"> <span class="quantity-stock__quantity-color --yellow"></span>Достаточно</div>
+                            <div class="product__quantity quantity-stock"> <span class="quantity-stock__quantity-color --out-stock-red"></span>Нет в наличии</div>
                             <div class="product__rating rating">
                                 <div class="rating__wrap">
                                     <div class="rating__item added">
@@ -529,9 +529,9 @@
                                 </div>
                             </div>
 
-                            <div class="product__buttons">
-                                <a href="#" class="product__basket basket-button main-btn">В корзину</a>
-                                <a href="#" class="product__oneclick oneclick-button main-btn animButton --blue" data-content="Заказ в один клик">Заказ в один клик</a>
+                            <div class="product__buttons --order">
+                                <a href="#" class="product__basket order-button main-btn">Под заказ</a>
+                                <div class="product__quantity-delivery quantity-delivery">Срок ожидания не более <span> 4</span>-х недель</div>
                             </div>
                         </div>
                         <div class="product__column-info">
@@ -2460,288 +2460,14 @@
 <section class="product-reviews" id="product-reviews">
     <div class="container">
         <div class="product-reviews__wrap">
-            <h2 class="product-reviews__title title-h2">Отзывы наших покупателей</h2>
-            <div class="product-reviews__row">
-                <div class="product-reviews__column">
-                    <div class="product-reviews__list">
-                        <div class="product-reviews__item item-rev">
-                            <div class="item-rev__user">
-                                <div class="item-rev__group">
-                                    <div class="item-rev__group-name">
-                                        <div class="item-rev__name">Алина Денисова</div>
-                                    </div>
-                                    <div class="item-rev__date">9/11/2020</div>
-                                </div>
-                                <div class="item-rev__rating rating">
-                                    <div class="rating__wrap">
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-rev__text">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру 
-                                    сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а 
-                                    начинающему оратору отточить навык публичных выступлений в домашних 
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-reviews__item item-rev">
-                            <div class="item-rev__user">
-                                <div class="item-rev__group">
-                                    <div class="item-rev__group-name">
-                                        <div class="item-rev__name">Алина Денисова</div>
-                                    </div>
-                                    <div class="item-rev__date">9/11/2020</div>
-                                </div>
-                                <div class="item-rev__rating rating">
-                                    <div class="rating__wrap">
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-rev__text">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру 
-                                    сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а 
-                                    начинающему оратору отточить навык публичных выступлений в домашних 
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-reviews__item item-rev">
-                            <div class="item-rev__user">
-                                <div class="item-rev__group">
-                                    <div class="item-rev__group-name">
-                                        <div class="item-rev__name">Алина Денисова</div>
-                                    </div>
-                                    <div class="item-rev__date">9/11/2020</div>
-                                </div>
-                                <div class="item-rev__rating rating">
-                                    <div class="rating__wrap">
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-rev__text">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру 
-                                    сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а 
-                                    начинающему оратору отточить навык публичных выступлений в домашних 
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-reviews__item item-rev">
-                            <div class="item-rev__user">
-                                <div class="item-rev__group">
-                                    <div class="item-rev__group-name">
-                                        <div class="item-rev__name">Алина Денисова</div>
-                                    </div>
-                                    <div class="item-rev__date">9/11/2020</div>
-                                </div>
-                                <div class="item-rev__rating rating">
-                                    <div class="rating__wrap">
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-rev__text">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру 
-                                    сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а 
-                                    начинающему оратору отточить навык публичных выступлений в домашних 
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-reviews__item item-rev">
-                            <div class="item-rev__user">
-                                <div class="item-rev__group">
-                                    <div class="item-rev__group-name">
-                                        <div class="item-rev__name">Алина Денисова</div>
-                                    </div>
-                                    <div class="item-rev__date">9/11/2020</div>
-                                </div>
-                                <div class="item-rev__rating rating">
-                                    <div class="rating__wrap">
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item added">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div class="rating__item">
-                                            <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-rev__text">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру 
-                                    сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а 
-                                    начинающему оратору отточить навык публичных выступлений в домашних 
-                                </div>
-                            </div>
-
-                            <div class="item-rev__admin">
-                                <div class="item-rev__image">
-                                    <img src="./img/logo.svg" alt="">
-                                </div>
-                                <div class="item-rev__group-review">
-                                    <div class="item-rev__group">
-                                        <div class="item-rev__group-name">
-                                            <div class="item-rev__name">Менеджер Artiteq</div>
-                                            <div class="item-rev__name-user">В ответ <span>Сергей</span></div>
-                                        </div>
-                                        <div class="item-rev__date">9/11/2020</div>
-                                    </div>
-                                    <div class="item-rev__text">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру 
-                                        сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а 
-                                        начинающему оратору отточить навык публичных выступлений в домашних 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-reviews__button-wrap">
-                        <a href="#" class="product-reviews__button-all main-btn">Посмотреть все</a>
-                    </div>
+            <div class="product-reviews__not-rev">
+                <div class="product-reviews__not-rev-image">
+                    <img src="./img/icon-not-rev.svg" alt="">
                 </div>
-
-                <div class="product-reviews__column">
-                    <div class="product-reviews__group-all-rev">
-                        <div class="product-reviews__rating rating">
-                            <div class="rating__wrap">
-                                <div class="rating__item added">
-                                    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="rating__item added">
-                                    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="rating__item added">
-                                    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="rating__item">
-                                    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="rating__item">
-                                    <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="rating__reviews"><span class="rating__value">5</span> отзывов</div>
-                        </div>
-                        <a href="#" class="product-reviews__button main-btn">Оставить отзыв</a>
-                    </div>
+                <h2 class="product-reviews__title title-h2">Отзывы наших покупателей</h2>
+                <div class="product-reviews__not-rev-text">Для этого товара еще не оставлено отзывов. Будьте первым, поделитесь своим мнением с другими покупателями.</div>
+                <div class="product-reviews__not-rev-button">
+                    <a href="#" class="product-reviews__button main-btn">Оставить отзыв</a>
                 </div>
             </div>
         </div>

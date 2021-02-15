@@ -191,16 +191,78 @@ var sliderBigProduct = new Swiper('.slider-big-product', {
     },
 })
 
+sliderBigProduct.on('slideChange', function () {
+    let hiddenEl = Array.prototype.slice.call(document.querySelectorAll(".js-hidden-video"));
+    if (sliderBigProduct.slides[sliderBigProduct.activeIndex].classList.contains("--video")) {
+        hiddenEl.forEach(el => {
+            el.style.opacity = "0";
+            el.style.visibility = "hidden";
+        })
+    } else {
+        hiddenEl.forEach(el => {
+            if (el.style.opacity == "0" && el.style.visibility == "hidden")
+                el.style.opacity = "";
+            el.style.visibility = "";
+        })
+    }
+});
+
 var sliderSmallProduct = new Swiper('.slider-small-product', {
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 3,
     spaceBetween: 15,
     loopAdditionalSlides: 10,
     slideToClickedSlide: true,
+    breakpoints: {
+        500: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+        },
+    },
 })
 
 sliderBigProduct.controller.control = sliderSmallProduct;
 sliderSmallProduct.controller.control = sliderBigProduct;
+
+var usageGalarySldier = new Swiper('.usage__galary-slider', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 15,
+    navigation: {
+        nextEl: '.usage__galary-next',
+        prevEl: '.usage__galary-prev',
+    },
+
+    breakpoints: {
+        500: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        992: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+        1170: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+        },
+    },
+})
+
+var sliderproductAccessories = new Swiper('.product-accessories__slider', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loopAdditionalSlides: 10,
+    pagination: {
+        el: '.product-accessories__pagination',
+        clickable: true,
+    },
+})
 
 
 // Ограничение текта отзывов
@@ -425,6 +487,102 @@ arrAnimIcon.forEach(element => {
     })
 });
 
+// Количество товаров
+
+let buttonAdd = Array.prototype.slice.call(document.querySelectorAll(".quantity-order__add"));
+let buttonSub = Array.prototype.slice.call(document.querySelectorAll(".quantity-order__sub"));
+
+if (buttonAdd != null) {
+    buttonAdd.forEach(el => {
+        let productPriceContainer = el.parentNode.parentNode.querySelector(".price-product__current-price span");
+        let productPrice = parseInt(productPriceContainer.textContent.replace(/\s/g, ''));
+        el.addEventListener("click", () => {
+            let inputQuantity = el.parentNode.querySelector(".quantity-order__input");
+            inputQuantity.value = parseInt(inputQuantity.value) + 1;
+
+            productPriceContainer.textContent = productPrice + parseInt(productPriceContainer.textContent.replace(/\s/g, ''));
+        });
+    })
+}
+
+if (buttonSub != null) {
+    buttonSub.forEach(el => {
+        let productPriceContainer = el.parentNode.parentNode.querySelector(".price-product__current-price span");
+        let productPrice = parseInt(productPriceContainer.textContent.replace(/\s/g, ''));
+        let inputQuantity = el.parentNode.querySelector(".quantity-order__input");
+        el.addEventListener("click", () => {
+            if (parseInt(inputQuantity.value) - 1 > 0) {
+                inputQuantity.value = parseInt(inputQuantity.value) - 1;
+
+                productPriceContainer.textContent = parseInt(productPriceContainer.textContent.replace(/\s/g, '')) - productPrice;
+            }
+        });
+    });
+
+
+}
+
+// запуск видео
+
+let videoPrev = document.querySelector(".usage__video-prev");
+
+let videoContainer = document.querySelector(".usage__video-container");
+
+function YouTubeGetID(url) {
+    var ID = '';
+    url = url.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+    if (url[2] !== undefined) {
+        ID = url[2].split(/[^0-9a-z_\-]/i);
+        ID = ID[0];
+    }
+    else {
+        ID = url;
+    }
+    return ID;
+}
+
+if (videoPrev != null) {
+
+    let videoId = YouTubeGetID(videoContainer.dataset.videoId);
+
+    let src = "https://www.youtube.com/embed/" + videoId;
+
+    videoContainer.innerHTML = `<iframe class="usage__video" src="${src}" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"></iframe>`
+
+
+    videoPrev.addEventListener("click", () => {
+        let videoFrame = document.querySelector(".usage__video");
+
+        videoPrev.classList.add("active");
+        videoFrame.classList.add("active");
+
+        videoFrame.setAttribute("src", src + '?rel=0&showinfo=0' + '&autoplay=1');
+    });
+}
+
+//Плавный якорь
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        const blockID = anchor.getAttribute('href').substr(1)
+
+        document.getElementById(blockID).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    })
+}
+
+// Position sticky на js
+if (document.querySelector(".product-reviews__group-all-rev") != null) {
+    let stickyEl = new Sticksy('.product-reviews__group-all-rev');
+}
+
+
 $(document).ready(function () {
 
     // Меню каталога
@@ -460,7 +618,7 @@ $(document).ready(function () {
 
     // Галерея
 
-    $("#lightgallery").lightGallery({
+    $(".lightgallery").lightGallery({
         selector: 'a'
     });
 
