@@ -200,9 +200,10 @@ sliderBigProduct.on('slideChange', function () {
         })
     } else {
         hiddenEl.forEach(el => {
-            if (el.style.opacity == "0" && el.style.visibility == "hidden")
+            if (el.style.opacity == "0" && el.style.visibility == "hidden") {
                 el.style.opacity = "";
-            el.style.visibility = "";
+                el.style.visibility = "";
+            }
         })
     }
 });
@@ -494,7 +495,7 @@ let buttonSub = Array.prototype.slice.call(document.querySelectorAll(".quantity-
 
 if (buttonAdd != null) {
     buttonAdd.forEach(el => {
-        let productPriceContainer = el.parentNode.parentNode.querySelector(".price-product__current-price span");
+        let productPriceContainer = el.parentNode.parentNode.querySelector(".price-product__current-price.js-price-quantity span");
         let productPrice = parseInt(productPriceContainer.textContent.replace(/\s/g, ''));
         el.addEventListener("click", () => {
             let inputQuantity = el.parentNode.querySelector(".quantity-order__input");
@@ -507,7 +508,7 @@ if (buttonAdd != null) {
 
 if (buttonSub != null) {
     buttonSub.forEach(el => {
-        let productPriceContainer = el.parentNode.parentNode.querySelector(".price-product__current-price span");
+        let productPriceContainer = el.parentNode.parentNode.querySelector(".price-product__current-price.js-price-quantity span");
         let productPrice = parseInt(productPriceContainer.textContent.replace(/\s/g, ''));
         let inputQuantity = el.parentNode.querySelector(".quantity-order__input");
         el.addEventListener("click", () => {
