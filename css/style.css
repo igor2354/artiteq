@@ -4792,7 +4792,13 @@ input[type="number"] {
 
 .item-rev {
   padding: 0 40px;
-  background: #f7f8fa; }
+  background: #f7f8fa;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .item-rev.--hidden {
+    margin-bottom: 0; }
   .item-rev__user {
     padding: 30px 0; }
   .item-rev__group {

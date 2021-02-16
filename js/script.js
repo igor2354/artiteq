@@ -578,11 +578,50 @@ for (let anchor of anchors) {
     })
 }
 
+
 // Position sticky на js
+let stickyEl;
 if (document.querySelector(".product-reviews__group-all-rev") != null) {
-    let stickyEl = new Sticksy('.product-reviews__group-all-rev');
+    stickyEl = new Sticksy('.product-reviews__group-all-rev', { topSpacing: 140, listen: true }, true);
 }
 
+// Раскрытие отзывов 
+
+let reviewsContainer = document.querySelector(".product-reviews__list");
+let buttonViewAllRev = document.querySelector(".product-reviews__button-all");
+let arrReviewsItem = Array.prototype.slice.call(document.querySelectorAll(".product-reviews__item"));
+
+arrReviewsItem.forEach((el, index) => {
+    if (index > 4) {
+        el.style.height = "0px";
+        el.classList.add("--hidden");
+    }
+    stickyEl.hardRefresh();
+});
+
+
+if (buttonViewAllRev != null) {
+    buttonViewAllRev.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        arrReviewsItem.forEach((el, index) => {
+            if (index > 4) {
+                if (el.style.height == "0px") {
+                    el.classList.remove("--hidden");
+                    el.style.height = el.scrollHeight + "px";
+                } else {
+                    el.classList.add("--hidden");
+                    el.style.height = "0px";
+                }
+            }
+        });
+
+        setTimeout(() => {
+            stickyEl.hardRefresh();
+        }, 300)
+
+    })
+}
 
 $(document).ready(function () {
 
