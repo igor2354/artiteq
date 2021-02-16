@@ -489,7 +489,7 @@ arrAnimIcon.forEach(element => {
 });
 
 // Количество товаров
-
+//===========================================МОЖНО УДАЛИТЬ==================================================================
 let buttonAdd = Array.prototype.slice.call(document.querySelectorAll(".quantity-order__add"));
 let buttonSub = Array.prototype.slice.call(document.querySelectorAll(".quantity-order__sub"));
 
@@ -519,9 +519,9 @@ if (buttonSub != null) {
             }
         });
     });
-
-
 }
+
+//=============================================================================================================
 
 // запуск видео
 
@@ -563,7 +563,7 @@ if (videoPrev != null) {
 
 //Плавный якорь
 
-const anchors = document.querySelectorAll('a[href*="#"]')
+const anchors = document.querySelectorAll('a[href*="#"].--js-anchor-link')
 
 for (let anchor of anchors) {
     anchor.addEventListener('click', function (e) {
