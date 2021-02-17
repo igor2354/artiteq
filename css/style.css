@@ -3847,17 +3847,19 @@ input[type="number"] {
   border-radius: 2px;
   line-height: 23px;
   color: #828282; }
-  .scheme::before {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 40px;
-    top: 50%;
-    left: 35px;
-    -webkit-transform: translate(0, -50%);
-        -ms-transform: translate(0, -50%);
-            transform: translate(0, -50%);
-    background: url("../img/icon-pdf.svg") no-repeat; }
+  .scheme span {
+    position: relative; }
+    .scheme span::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 40px;
+      top: 50%;
+      left: -45px;
+      -webkit-transform: translate(0, -50%);
+          -ms-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+      background: url("../img/icon-pdf.svg") no-repeat; }
 
 @media (max-width: 1470px) {
   .product__group:first-child {
@@ -3892,7 +3894,9 @@ input[type="number"] {
     grid-template-columns: 1fr;
     margin-bottom: 0; }
   .general-info {
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+  .scheme {
+    text-align: center; } }
 
 @media (max-width: 1170px) {
   .product__group:first-child {
