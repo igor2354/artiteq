@@ -5307,6 +5307,8 @@ input[type="number"] {
     width: 100%;
     padding: 15px;
     border: 1px solid #d1d1d1; }
+  .form-contact__input-wrap.--legal {
+    display: none; }
 
 .form-contact__textarea {
   resize: none;
@@ -5458,6 +5460,8 @@ input[type="number"] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin-bottom: 30px; }
   .order-result__title-price {
     font-weight: 600;
@@ -5722,10 +5726,32 @@ input[type="number"] {
 
 @media (max-width: 1170px) {
   .making-order__row {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .order-result__button {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .order-result__button-add {
+    margin-bottom: 0;
+    margin-right: 15px; }
+  .order-result__title {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 1150)); }
+  .order-result__name {
+    font-size: calc(14px + 4 * ((100vw - 320px) / 1150)); }
+  .order-result__value {
+    font-size: calc(14px + 4 * ((100vw - 320px) / 1150)); }
+  .order-result__title-service {
+    font-size: calc(16px + 2 * ((100vw - 320px) / 1150)); }
+  .order-result__title-price {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 1150)); }
+  .order-result__price {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 1150)); } }
 
 @media (max-width: 992px) {
   .making-order__form-wrap {
+    padding: 25px; }
+  .order-result {
     padding: 25px; }
   .form-contact__input-wrap {
     -webkit-box-flex: 1;
@@ -5739,10 +5765,13 @@ input[type="number"] {
       left: 23px; } }
 
 @media (max-width: 768px) {
+  .making-order__row {
+    grid-gap: 20px; }
   .form-payment__list {
     grid-template-columns: 1fr; }
   .form-services__list {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr;
+    gap: 15px; } }
 
 @media (max-width: 600px) {
   .making-order__form-wrap {
@@ -5752,6 +5781,18 @@ input[type="number"] {
     margin-bottom: 20px; }
   .making-order__column:first-child {
     grid-gap: 20px; }
+  .order-result {
+    padding: 15px; }
+    .order-result__row:last-child {
+      padding-top: 15px; }
+    .order-result__title {
+      margin-bottom: 20px; }
+    .order-result__group-info {
+      padding: 0 0 15px 0; }
+    .order-result__group-service {
+      padding: 15px 0; }
+    .order-result__price-result {
+      margin-bottom: 15px; }
   .form-contact__input-wrap {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc(100% / 1 - 25px);
@@ -5779,9 +5820,22 @@ input[type="number"] {
   .from-delivery__value {
     text-align: left; }
   .from-delivery__radio-text {
-    font-size: 16px; } }
+    font-size: 16px; }
+  .form-services__hint {
+    display: block; }
+  .form-services__hint-popup {
+    min-width: 190px;
+    max-width: 190px; } }
 
 @media (max-width: 500px) {
+  .order-result__button {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .order-result__button-add {
+    margin-bottom: 15px;
+    margin-right: 0; }
   .form-payment__item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

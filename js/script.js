@@ -587,7 +587,7 @@ if (document.querySelector(".product-reviews__group-all-rev") != null) {
 
 let stickyOrder;
 if (document.querySelector(".order-result") != null) {
-    stickyOrder = new Sticksy('.order-result', { topSpacing: 140, listen: true }, true);
+    stickyOrder = new Sticksy('.order-result', { topSpacing: 0, listen: true }, true);
 }
 
 // Раскрытие отзывов 
@@ -627,6 +627,26 @@ if (buttonViewAllRev != null) {
 
     })
 }
+
+//============================ПЕРЕКЛЮЧЕНИЕ БУДЕТ ИСПОЛЗОВАТЬСЯ БИТРИКСА МОЖНО УДАЛЯТЬ============================
+// Переключение форм юр лица и физ лица
+let triggers = Array.prototype.slice.call(document.querySelectorAll(".form-contact__radio"));
+let arrInputLegal = Array.prototype.slice.call(document.querySelectorAll(".form-contact__input-wrap.--legal"));
+
+triggers.forEach(el => {
+    el.onchange = () => {
+        if (el.classList.contains("--legal") && el.querySelector("input").checked) {
+            arrInputLegal.forEach(element => {
+                element.style.display = "block";
+            });
+        } else {
+            arrInputLegal.forEach(element => {
+                element.style.display = "none";
+            });
+        }
+    }
+});
+//============================================================================================================
 
 $(document).ready(function () {
 
