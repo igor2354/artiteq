@@ -585,6 +585,11 @@ if (document.querySelector(".product-reviews__group-all-rev") != null) {
     stickyEl = new Sticksy('.product-reviews__group-all-rev', { topSpacing: 140, listen: true }, true);
 }
 
+let stickyOrder;
+if (document.querySelector(".order-result") != null) {
+    stickyOrder = new Sticksy('.order-result', { topSpacing: 140, listen: true }, true);
+}
+
 // Раскрытие отзывов 
 
 let reviewsContainer = document.querySelector(".product-reviews__list");

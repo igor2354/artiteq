@@ -535,9 +535,17 @@ input[type="number"] {
     border-radius: 1px; }
   .fav__item {
     display: block; }
+    .fav__item:hover .fav__icon img {
+      -webkit-filter: none;
+              filter: none; }
   .fav__icon {
     position: relative; }
     .fav__icon img {
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      -webkit-filter: grayscale(1) brightness(2.05);
+              filter: grayscale(1) brightness(2.05);
       height: 24px; }
   .fav__value {
     position: absolute;
@@ -2377,7 +2385,8 @@ input[type="number"] {
 .categories-product {
   margin-bottom: 40px; }
   .categories-product__title {
-    margin-bottom: 2.1%; }
+    margin-bottom: 2.1%;
+    color: #0079be; }
   .categories-product__categories {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -5241,6 +5250,9 @@ input[type="number"] {
     max-width: 100px;
     padding: 5px 15px; } }
 
+.making-order__wrap {
+  padding-bottom: 5.5%; }
+
 .making-order__title {
   margin-bottom: 2.8%; }
 
@@ -5501,6 +5513,7 @@ input[type="number"] {
   margin-bottom: 6px; }
 
 .from-delivery__radio-text {
+  display: block;
   cursor: pointer;
   font-weight: 600;
   font-size: 18px;
@@ -5530,8 +5543,7 @@ input[type="number"] {
 
 .form-payment__list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-row: 1fr; }
+  grid-template-columns: 1fr 1fr; }
 
 .form-payment__radio {
   display: block; }
@@ -5629,49 +5641,53 @@ input[type="number"] {
     background: #0079be;
     border-radius: 50%; }
 
-.form-services__hint {
-  position: relative;
-  cursor: pointer;
-  margin-bottom: 5px; }
-  .form-services__hint:hover .form-services__hint-popup {
-    opacity: 1;
-    visibility: visible; }
-
-.form-services__hint-name {
+.form-services__name {
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
   color: #333333; }
-  .form-services__hint-name span {
-    margin-left: 5px;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    min-width: 15px;
-    min-height: 15px;
-    max-width: 15px;
-    max-height: 15px;
-    border-radius: 50%;
-    border: 1px solid #0079be;
-    font-size: 13px;
-    line-height: 100%;
-    font-weight: 400;
-    color: #0079be; }
+
+.form-services__hint {
+  display: inline-block;
+  position: relative;
+  margin-left: 5px;
+  cursor: pointer; }
+  .form-services__hint:hover .form-services__hint-popup {
+    opacity: 1;
+    visibility: visible; }
+
+.form-services__hint-icon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 15px;
+  min-height: 15px;
+  max-width: 15px;
+  max-height: 15px;
+  border-radius: 50%;
+  border: 1px solid #0079be;
+  font-size: 13px;
+  line-height: 100%;
+  font-weight: 400;
+  color: #0079be; }
 
 .form-services__hint-popup {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  left: -25px;
-  top: 36px;
+  left: 12px;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  top: 42px;
   width: 100%;
-  min-width: 215px;
+  min-width: 242px;
   padding: 10px 20px;
   background: #ffffff;
   border-radius: 2px;
@@ -5685,7 +5701,10 @@ input[type="number"] {
     content: "";
     position: absolute;
     bottom: 99%;
-    left: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
     border: 30px solid transparent;
     border-bottom: 20px solid #fff; }
 
@@ -5700,6 +5719,83 @@ input[type="number"] {
   font-size: 11px;
   line-height: 21px;
   color: #4f4f4f; }
+
+@media (max-width: 1170px) {
+  .making-order__row {
+    grid-template-columns: 1fr; } }
+
+@media (max-width: 992px) {
+  .making-order__form-wrap {
+    padding: 25px; }
+  .form-contact__input-wrap {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(100% / 2 - 25px);
+            flex: 1 1 calc(100% / 2 - 25px); }
+  .form-services__item {
+    padding: 32px 35px 32px 50px; }
+    .form-services__item::before {
+      left: 15px; }
+    .form-services__item::after {
+      left: 23px; } }
+
+@media (max-width: 768px) {
+  .form-payment__list {
+    grid-template-columns: 1fr; }
+  .form-services__list {
+    grid-template-columns: 1fr; } }
+
+@media (max-width: 600px) {
+  .making-order__form-wrap {
+    padding: 15px; }
+  .making-order__form-name {
+    font-size: 18px;
+    margin-bottom: 20px; }
+  .making-order__column:first-child {
+    grid-gap: 20px; }
+  .form-contact__input-wrap {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(100% / 1 - 25px);
+            flex: 1 1 calc(100% / 1 - 25px); }
+  .form-contact__radio-text {
+    font-size: 16px; }
+  .form-contact__wrap-radio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 20px; }
+    .form-contact__wrap-radio label:first-child {
+      margin-right: 0;
+      margin-bottom: 15px; }
+  .from-delivery__item {
+    grid-template-columns: 1fr;
+    gap: 10px; }
+  .from-delivery__right {
+    padding-left: 40px;
+    justify-self: start; }
+  .from-delivery__value {
+    text-align: left; }
+  .from-delivery__radio-text {
+    font-size: 16px; } }
+
+@media (max-width: 500px) {
+  .form-payment__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    padding: 15px; }
+  .form-payment__icon {
+    margin-right: 0;
+    margin-bottom: 15px; }
+  .form-services__item {
+    padding: 15px 15px 15px 50px; }
+  .form-services__name {
+    font-size: 13px; } }
 
 .footer {
   background: #000822; }
