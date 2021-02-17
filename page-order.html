@@ -341,766 +341,388 @@
     </div>
 </section>
 
-<section class="basket-product">
+<section class="making-order">
     <div class="container">
-        <div class="basket-product__wrap">
-            <h2 class="basket-product__title title-h2">Корзина</h2>
-            <div class="basket-product__row">
-                <div class="basket-product__caption basket-caption">
-                    <div class="basket-caption__name basket-caption__text">Товар</div>
-                    <div class="basket-caption__price-one basket-caption__text">Цена за ед.</div>
-                    <div class="basket-caption__quantity basket-caption__text">Количество</div>
-                    <div class="basket-caption__price-all basket-caption__text">Стоимость</div>
-                </div>
+        <div class="making-order__wrap">
+            <h2 class="making-order__title title-h2">Оформление заказа</h2>
+            <div class="making-order__row">
+                <div class="making-order__column">
+                    <div class="making-order__form-wrap">
+                        <div class="making-order__form-name">Контактные данные</div>
+                        <form action="#" class="making-order__form-contact form-contact">
 
-                <div class="basket-product__list">
-                    <div class="basket-product__item item-product-basket">
-                        <div class="item-product-basket__group">
-                            <a href="" class="item-product-basket__image"><img src="./img/image-basket-product-1.png" alt=""></a>
-                            <div class="item-product-basket__group-info">
-                                <a href="" class="item-product-basket__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="item-product-basket__article article">Артикул: <span>1111</span></div>
-                                <div class="item-product-basket__parameters">
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Длина, см:</span>
-                                        <span>200;</span>
-                                    </div>
-
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Тип:</span>
-                                        <span>Для рельса «Деко»;</span>
-                                    </div>
-
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Материал:</span>
-                                        <span>Сталь;</span>
-                                    </div>
-
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Цвет:</span>
-                                        <span>Белый</span>
-                                    </div>
-                                </div>
+                            <div class="form-contact__wrap-radio">
+                                <label class="form-contact__radio form-radio">
+                                    <input name="user" type="radio" checked>
+                                    <span class="form-contact__radio-text">Физическое лицо</span>
+                                </label>
+    
+                                <label class="form-contact__radio form-radio">
+                                    <input name="user" type="radio">
+                                    <span class="form-contact__radio-text">Юридическое лицо</span>
+                                </label>
                             </div>
-                        </div>
 
-                        <div class="item-product-basket__price-one price-product" data-name="Цена за ед.">
-                            <div class="price-product__old-price"><span>10 000</span> р.</div>
-                            <div class="price-product__current-price"><span>2 000</span> р.</div>
-                        </div>
 
-                        <div class="item-product-basket__quantity quantity-order" data-name="Количество">
-                            <div class="quantity-order__sub"></div>
-                            <input class="quantity-order__input" type="number" value="1">
-                            <div class="quantity-order__add"></div>
-                        </div>
+                            <div class="form-contact__wrap-form">
+                                    <div class="form-contact__input-wrap --legal">
+                                        <select name="" id="">
+                                            <option value="Форма организации">Форма организации</option>
+                                            <option value="ИП">ИП</option>
+                                            <option value="ООО">ООО</option>
+                                            <option value="АО">АО</option>
+                                        </select>
+                                    </div>
+    
+                                    <div class="form-contact__input-wrap --legal">
+                                        <input class="form-contact__input" type="text" placeholder="Название организации">
+                                    </div>
+    
+                                    <div class="form-contact__input-wrap --legal">
+                                        <input class="form-contact__input" type="text" placeholder="Юридический адрес">
+                                    </div>
+    
+                                    
+                                    <div class="form-contact__input-wrap --legal">
+                                        <input class="form-contact__input" type="text" placeholder="ИНН">
+                                    </div>
+    
+                                    <div class="form-contact__input-wrap --legal">
+                                        <input class="form-contact__input" type="text" placeholder="КПП">
+                                    </div>
+    
+                                    <div class="form-contact__input-wrap --legal">
+                                        <input class="form-contact__input" type="text" placeholder="БИК">
+                                    </div>
+    
+                                    <div class="form-contact__input-wrap --legal">
+                                        <input class="form-contact__input" type="text" placeholder="Банк">
+                                    </div>
+    
+                                    <div class="form-contact__input-wrap --legal">
+                                        <input class="form-contact__input" type="text" placeholder="Коор. счет">
+                                    </div>
+    
+                                    <div class="form-contact__input-wrap --legal">
+                                        <input class="form-contact__input" type="text" placeholder="Расчетный счет">
+                                    </div>
 
-                        <div class="item-product-basket__price-all price-product" data-name="Стоимость">
-                            <div class="price-product__current-price js-price-quantity"><span>2 000</span> р.</div>
-                        </div>
+                                    <div class="form-contact__input-wrap">
+                                        <input class="form-contact__input" type="text" placeholder="Ваше ФИО *">
+                                    </div>
+    
+                                    <div class="form-contact__input-wrap">
+                                        <input class="form-contact__input" type="text" placeholder="Ваш телефон *">
+                                    </div>
+    
+                                    <div class="form-contact__input-wrap">
+                                        <input class="form-contact__input" type="text" placeholder="Ваш E-mail *">
+                                    </div>
+    
+                                    <div class="form-contact__input-wrap">
+                                        <textarea class="form-contact__textarea" placeholder="Адрес доставки"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-contact__input-wrap">
+                                        <textarea class="form-contact__textarea" placeholder="Комментарий к заказу"></textarea>
+                                    </div>
 
-                        <div class="item-product-basket__delete">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><g clip-path="url(#clip0)"><path d="M3.844 7.145v13.848c0 .819.3 1.587.825 2.139A2.768 2.768 0 006.677 24h10.634a2.767 2.767 0 002.009-.868c.524-.552.824-1.32.824-2.139V7.145a2.147 2.147 0 00-.55-4.222h-2.879V2.22A2.208 2.208 0 0014.49 0H9.499a2.208 2.208 0 00-2.226 2.22v.703H4.395a2.147 2.147 0 00-.55 4.222zm13.467 15.73H6.677c-.96 0-1.708-.825-1.708-1.882V7.194H19.02v13.799c0 1.057-.748 1.883-1.709 1.883zM8.397 2.22A1.082 1.082 0 019.5 1.124h4.99a1.083 1.083 0 011.102 1.096v.703H8.397V2.22zM4.395 4.047h15.198a1.012 1.012 0 110 2.023H4.395a1.012 1.012 0 110-2.023z" fill="#0079BE"/></g><defs><clipPath id="clip0"><path fill="none" d="M0 0h24v24H0z"/></clipPath></defs></svg>
-                        </div>
+                            </div>
+
+                        </form>
                     </div>
 
-                    <div class="basket-product__item item-product-basket">
-                        <div class="item-product-basket__group">
-                            <a href="" class="item-product-basket__image"><img src="./img/image-basket-product-1.png" alt=""></a>
-                            <div class="item-product-basket__group-info">
-                                <a href="" class="item-product-basket__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="item-product-basket__article article">Артикул: <span>1111</span></div>
-                                <div class="item-product-basket__parameters">
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Длина, см:</span>
-                                        <span>200;</span>
+                    <div class="making-order__form-wrap">
+                        <div class="making-order__form-name">Выберите способ доставки</div>
+                        <form action="#" class="making-order__from-delivery from-delivery">
+                            <div class="from-delivery__list">
+                                <div class="from-delivery__item">
+                                    <div class="from-delivery__left">
+                                        <label class="from-delivery__radio form-radio">
+                                            <input name="delivery"  type="radio" checked>
+                                            <span class="from-delivery__radio-text">Самовывоз</span>
+                                        </label>
+                                        <div class="from-delivery__text">Самовывоз из точки выдачи заказов по адресу:</div>
+                                        <div class="from-delivery__address">МО, п. Заречье, ул. Торговая, д.2</div>
                                     </div>
-
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Тип:</span>
-                                        <span>Для рельса «Деко»;</span>
-                                    </div>
-
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Материал:</span>
-                                        <span>Сталь;</span>
-                                    </div>
-
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Цвет:</span>
-                                        <span>Белый</span>
+                                    <div class="from-delivery__right">
+                                        <div class="from-delivery__value">бесплатно</div>
                                     </div>
                                 </div>
+
+                                <div class="from-delivery__item">
+                                    <div class="from-delivery__left">
+                                        <label class="from-delivery__radio form-radio">
+                                            <input name="delivery"  type="radio">
+                                            <span class="from-delivery__radio-text">Доставка по Москве</span>
+                                        </label>
+                                        <div class="from-delivery__text">Заказ доставляется до адреса покупателя в Москве, в пределах МКАД.</div>
+                                    </div>
+                                    <div class="from-delivery__right">
+                                        <div class="from-delivery__value">600 р.</div>
+                                    </div>
+                                </div>
+
+                                <div class="from-delivery__item">
+                                    <div class="from-delivery__left">
+                                        <label class="from-delivery__radio form-radio">
+                                            <input name="delivery"  type="radio">
+                                            <span class="from-delivery__radio-text">Доставка по Московской области</span>
+                                        </label>
+                                        <div class="from-delivery__text">Заказ доставляется до адреса покупателя в МО, не более 25 км от МКАД.</div>
+                                    </div>
+                                    <div class="from-delivery__right">
+                                        <div class="from-delivery__value">1 200 р.</div>
+                                    </div>
+                                </div>
+
+                                <div class="from-delivery__item">
+                                    <div class="from-delivery__left">
+                                        <label class="from-delivery__radio form-radio">
+                                            <input name="delivery"  type="radio">
+                                            <span class="from-delivery__radio-text">Доставка по России</span>
+                                        </label>
+                                        <div class="from-delivery__text">Доставляем до терминала транспортной компании в Москве и отправляем
+                                            в город указанный покупателем. Стоимость доставки до города покупателя
+                                            рассчитывается ТК на основании габаритов, веса и города назначения.
+                                        </div>
+                                    </div>
+                                    <div class="from-delivery__right">
+                                        <div class="from-delivery__value">рассчитывается индивидуально</div>
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
-
-                        <div class="item-product-basket__price-one price-product" data-name="Цена за ед.">
-                            <div class="price-product__old-price"><span>10 000</span> р.</div>
-                            <div class="price-product__current-price"><span>2 000</span> р.</div>
-                        </div>
-
-                        <div class="item-product-basket__quantity quantity-order"  data-name="Количество">
-                            <div class="quantity-order__sub"></div>
-                            <input class="quantity-order__input" type="number" value="1">
-                            <div class="quantity-order__add"></div>
-
-                        </div>
-
-                        <div class="item-product-basket__price-all price-product" data-name="Стоимость">
-                            <div class="price-product__current-price js-price-quantity"><span>2 000</span> р.</div>
-                        </div>
-
-                        <div class="item-product-basket__delete">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><g clip-path="url(#clip0)"><path d="M3.844 7.145v13.848c0 .819.3 1.587.825 2.139A2.768 2.768 0 006.677 24h10.634a2.767 2.767 0 002.009-.868c.524-.552.824-1.32.824-2.139V7.145a2.147 2.147 0 00-.55-4.222h-2.879V2.22A2.208 2.208 0 0014.49 0H9.499a2.208 2.208 0 00-2.226 2.22v.703H4.395a2.147 2.147 0 00-.55 4.222zm13.467 15.73H6.677c-.96 0-1.708-.825-1.708-1.882V7.194H19.02v13.799c0 1.057-.748 1.883-1.709 1.883zM8.397 2.22A1.082 1.082 0 019.5 1.124h4.99a1.083 1.083 0 011.102 1.096v.703H8.397V2.22zM4.395 4.047h15.198a1.012 1.012 0 110 2.023H4.395a1.012 1.012 0 110-2.023z" fill="#0079BE"/></g><defs><clipPath id="clip0"><path fill="none" d="M0 0h24v24H0z"/></clipPath></defs></svg>
-                        </div>
+                        </form>
                     </div>
 
-                    <div class="basket-product__item item-product-basket">
-                        <div class="item-product-basket__group">
-                            <a href="" class="item-product-basket__image"><img src="./img/image-basket-product-1.png" alt=""></a>
-                            <div class="item-product-basket__group-info">
-                                <a href="" class="item-product-basket__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="item-product-basket__article article">Артикул: <span>1111</span></div>
-                                <div class="item-product-basket__parameters">
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Длина, см:</span>
-                                        <span>200;</span>
-                                    </div>
+                    <div class="making-order__form-wrap">
+                        <div class="making-order__form-name">Выберите способ оплаты</div>
 
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Тип:</span>
-                                        <span>Для рельса «Деко»;</span>
+                        <form action="#" class="making-order__form-payment form-payment">
+                            <div class="form-payment__list">
+                                <label class="form-payment__radio">
+                                    <input name="payment" type="radio" checked>
+                                    <div class="form-payment__item">
+                                        <div class="form-payment__icon"><img src="./img/icon-order-payment-1.svg" alt=""></div>
+                                        <div class="form-payment__group">
+                                            <div class="form-payment__name">Наличными при получении</div>
+                                            <div class="form-payment__text">При получении, после проверки товара</div>
+                                        </div>
                                     </div>
+                                </label>
 
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Материал:</span>
-                                        <span>Сталь;</span>
+                                <label class="form-payment__radio">
+                                    <input name="payment" type="radio" >
+                                    <div class="form-payment__item">
+                                        <div class="form-payment__icon"><img src="./img/icon-order-payment-2.svg" alt=""></div>
+                                        <div class="form-payment__group">
+                                            <div class="form-payment__name">Банковской картой при получении</div>
+                                            <div class="form-payment__text">VISA, MasterCard, МИР</div>
+                                        </div>
                                     </div>
+                                </label>
 
-                                    <div class="item-product-basket__parameters-item">
-                                        <span>Цвет:</span>
-                                        <span>Белый</span>
+                                <label class="form-payment__radio">
+                                    <input name="payment" type="radio" >
+                                    <div class="form-payment__item">
+                                        <div class="form-payment__icon"><img src="./img/icon-order-payment-3.svg" alt=""></div>
+                                        <div class="form-payment__group">
+                                            <div class="form-payment__name">Онлайн через сайт</div>
+                                            <div class="form-payment__text">Оплата онлайн через платежный шлюз
+                                                крупнейшенго банка России
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </label>
+
+                                <label class="form-payment__radio">
+                                    <input name="payment" type="radio" >
+                                    <div class="form-payment__item">
+                                        <div class="form-payment__icon"><img src="./img/icon-order-payment-4.svg" alt=""></div>
+                                        <div class="form-payment__name">Безналичным переводом</div>
+                                    </div>
+                                </label>
                             </div>
-                        </div>
-
-                        <div class="item-product-basket__price-one price-product" data-name="Цена за ед.">
-                            <div class="price-product__current-price"><span>50</span> р.</div>
-                        </div>
-
-                        <div class="item-product-basket__quantity quantity-order"  data-name="Количество">
-                            <div class="quantity-order__sub"></div>
-                            <input class="quantity-order__input" type="number" value="1">
-                            <div class="quantity-order__add"></div>
-                        </div>
-
-                        <div class="item-product-basket__price-all price-product" data-name="Стоимость">
-                            <div class="price-product__current-price js-price-quantity"><span>50</span> р.</div>
-                        </div>
-
-                        <div class="item-product-basket__delete">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><g clip-path="url(#clip0)"><path d="M3.844 7.145v13.848c0 .819.3 1.587.825 2.139A2.768 2.768 0 006.677 24h10.634a2.767 2.767 0 002.009-.868c.524-.552.824-1.32.824-2.139V7.145a2.147 2.147 0 00-.55-4.222h-2.879V2.22A2.208 2.208 0 0014.49 0H9.499a2.208 2.208 0 00-2.226 2.22v.703H4.395a2.147 2.147 0 00-.55 4.222zm13.467 15.73H6.677c-.96 0-1.708-.825-1.708-1.882V7.194H19.02v13.799c0 1.057-.748 1.883-1.709 1.883zM8.397 2.22A1.082 1.082 0 019.5 1.124h4.99a1.083 1.083 0 011.102 1.096v.703H8.397V2.22zM4.395 4.047h15.198a1.012 1.012 0 110 2.023H4.395a1.012 1.012 0 110-2.023z" fill="#0079BE"/></g><defs><clipPath id="clip0"><path fill="none" d="M0 0h24v24H0z"/></clipPath></defs></svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="basket-product__promocode promocode --disabled">
-                    <div class="promocode__text">Есть промокод?</div>
-                    <from class="promocode__form">
-                        <div class="promocode__input-wrap">
-                            <input type="text" class="promocode__input" placeholder="Введите промокод">
-                        </div>
-
-                        <input type="submit" class="promocode__button main-btn" value="Применить">
-                    </from>
-                </div>
-
-                <div class="basket-product__discount">
-                    <div class="basket-product__discount-text">
-                        Скидка:
-                    </div>
-                    <div class="basket-product__discount-value">
-                        <span>500 р.</span>
-                    </div>
-                </div>
-
-                <div class="basket-product__price-result">
-                    <div class="basket-product__price-result-text">
-                        Итого:
+                        </form>
                     </div>
 
-                    <div class="basket-product__price-result-value">
-                        <span>406 100 р.</span>
-                    </div>
-                </div>
+                    <div class="making-order__form-wrap">
+                        <div class="making-order__form-name">Дополнительные услуги</div>
+                        <form action="#" class="making-order__form-services form-services">
+                            <div class="form-services__list">
+                                <label class="form-services__checkbox">
+                                    <input type="checkbox">
+                                    <div class="form-services__item">
+                                        <div class="form-services__group">
+                                            <div class="form-services__hint">
+                                                <div class="form-services__hint-name">Монтажные работы <span>!</span></div>
+                                                <div class="form-services__hint-popup">
+                                                    <div class="form-services__hint-price">Стоимость услуги <span>1 200</span> руб/час</div>
+                                                    <div class="form-services__hint-text">Окончательная цена рассчитывается
+                                                        индивидуально менеджером после
+                                                        оформления заказа
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-services__text">Поясняющий текст об услуге</div>
+                                        </div>
+                                    </div>
+                                </label>
 
-                <div class="basket-product__buttons">
-                    <a href="#" class="basket-product__button-clear main-btn animButton --blue" data-content="Очистить корзину">Очистить корзину</a>
-                    <a href="#" class="basket-product__button-order main-btn">Оформить заказ</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                                <label class="form-services__checkbox">
+                                    <input type="checkbox">
+                                    <div class="form-services__item">
+                                        <div class="form-services__group">
+                                            <div class="form-services__hint">
+                                                <div class="form-services__hint-name">Развеска картин <span>!</span></div>
+                                                <div class="form-services__hint-popup">
+                                                    <div class="form-services__hint-price">Стоимость услуги <span>1 200</span> руб/час</div>
+                                                    <div class="form-services__hint-text">Окончательная цена рассчитывается
+                                                        индивидуально менеджером после
+                                                        оформления заказа
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-services__text">Поясняющий текст об услуге</div>
+                                        </div>
+                                    </div>
+                                </label>
 
-<section class="similarly-product">
-    <div class="container">
-        <div class="similarly-product__wrap">
-            <div class="similarly-product__group">
-                <h2 class="similarly-product__title title-h2">С этим товаром покупают</h2>
-                <div class="similarly-product__buttons">
-                    <div class="similarly-product__prev swiper-button-prev"></div>
-                    <div class="similarly-product__next swiper-button-next"></div>
-                </div>
-            </div>
+                                <label class="form-services__checkbox">
+                                    <input type="checkbox">
+                                    <div class="form-services__item">
+                                        <div class="form-services__group">
+                                            <div class="form-services__hint">
+                                                <div class="form-services__hint-name">Развесовка лесок и крючков <span>!</span></div>
+                                                <div class="form-services__hint-popup">
+                                                    <div class="form-services__hint-price">Стоимость услуги <span>1 200</span> руб/час</div>
+                                                    <div class="form-services__hint-text">Окончательная цена рассчитывается
+                                                        индивидуально менеджером после
+                                                        оформления заказа
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-services__text">Поясняющий текст об услуге</div>
+                                        </div>
+                                    </div>
+                                </label>
 
+                                <label class="form-services__checkbox">
+                                    <input type="checkbox">
+                                    <div class="form-services__item">
+                                        <div class="form-services__group">
+                                            <div class="form-services__hint">
+                                                <div class="form-services__hint-name">Покраска профиля <span>!</span></div>
+                                                <div class="form-services__hint-popup">
+                                                    <div class="form-services__hint-price">Стоимость услуги <span>1 200</span> руб/час</div>
+                                                    <div class="form-services__hint-text">Окончательная цена рассчитывается
+                                                        индивидуально менеджером после
+                                                        оформления заказа
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-services__text">Поясняющий текст об услуге</div>
+                                        </div>
+                                    </div>
+                                </label>
 
-            <div class="similarly-product__sldier swiper-container">
-                <div class="similarly-product__slide-wrap swiper-wrapper">
-                    <div class="similarly-product__slide swiper-slide">
-                        <div class="similarly-product__slide product-card">
-                            <div class="product-card__sldier swiper-container">
-                                <div class="product-card__banner banner">
-                                    <div class="banner__item --news">Новинка</div>
-                                    <div class="banner__item --stock">Акция</div>
-                                    <div class="banner__item --hit">Хит продаж</div>
-                                </div>
-    
-                                <div class="product-card__fav favorites">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                    <path d="M11 19L9.55 17.7052C4.4 13.1243 1 10.103 1 6.3951C1 3.37384 3.42 1 6.5 1C8.24 1 9.91 1.79455 11 3.05014C12.09 1.79455 13.76 1 15.5 1C18.58 1 21 3.37384 21 6.3951C21 10.103 17.6 13.1243 12.45 17.715L11 19Z" stroke="#0079BE"/>
-                                    </svg>
-                                </div>
-                                <div class="product-card__slide-wrap swiper-wrapper">
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
+                                <label class="form-services__checkbox">
+                                    <input type="checkbox">
+                                    <div class="form-services__item">
+                                        <div class="form-services__group">
+                                            <div class="form-services__hint">
+                                                <div class="form-services__hint-name">Консультация дизайнера <span>!</span></div>
+                                                <div class="form-services__hint-popup">
+                                                    <div class="form-services__hint-price">Стоимость услуги <span>1 200</span> руб/час</div>
+                                                    <div class="form-services__hint-text">Окончательная цена рассчитывается
+                                                        индивидуально менеджером после
+                                                        оформления заказа
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-services__text">Поясняющий текст об услуге</div>
                                         </div>
                                     </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-card__pagination swiper-pagination"></div>
-                            </div>
-    
-                            <div class="product-card__info">
-                                <a href="#" class="product-card__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="product-card__group">
-                                    <div class="product-card__article article">Артикул: <span>1111</span></div>
-                                    <div class="product-card__barcode barcode">Штрихкод: <span>41122</span></div>
-                                </div>
-    
-                                <div class="product-card__quantity quantity-stock"> <span class="quantity-stock__quantity-color --yellow"></span>Достаточно</div>
-    
-                                <div class="product-card__group-price">
-                                    <div class="product-card__price">От <span class="product-card__price-value">720</span> р.</div>
-                                    <div class="product-card__price-old"><span class="product-card__price-value-old"></span></div>
-                                </div>
-    
-                                <div class="product-card__workload">Нагрузка: <span class="product-card__workload-value">30</span> кг/м</div>
-    
-                                <div class="product-card__group-button">
-                                    <a href="#" class="product-card__button-basket main-btn">Выбрать</a>
-                                    <div class="product-card__icon-prod"><img src="./img/icon-click-rail-button.png" alt=""></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </label>
 
-                    <div class="similarly-product__slide swiper-slide">
-                        <div class="similarly-product__slide product-card">
-                            <div class="product-card__sldier swiper-container">
-                                <div class="product-card__banner banner">
-                                    <div class="banner__item --news">Новинка</div>
-                                    <div class="banner__item --stock">Акция</div>
-                                    <div class="banner__item --hit">Хит продаж</div>
-                                </div>
-    
-                                <div class="product-card__fav favorites">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                    <path d="M11 19L9.55 17.7052C4.4 13.1243 1 10.103 1 6.3951C1 3.37384 3.42 1 6.5 1C8.24 1 9.91 1.79455 11 3.05014C12.09 1.79455 13.76 1 15.5 1C18.58 1 21 3.37384 21 6.3951C21 10.103 17.6 13.1243 12.45 17.715L11 19Z" stroke="#0079BE"/>
-                                    </svg>
-                                </div>
-                                <div class="product-card__slide-wrap swiper-wrapper">
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
+                                <label class="form-services__checkbox">
+                                    <input type="checkbox">
+                                    <div class="form-services__item">
+                                        <div class="form-services__group">
+                                            <div class="form-services__hint">
+                                                <div class="form-services__hint-name">Изготовление рамок по вашим размерам <span>!</span></div>
+                                                <div class="form-services__hint-popup">
+                                                    <div class="form-services__hint-price">Стоимость услуги <span>1 200</span> руб/час</div>
+                                                    <div class="form-services__hint-text">Окончательная цена рассчитывается
+                                                        индивидуально менеджером после
+                                                        оформления заказа
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-services__text">Поясняющий текст об услуге</div>
                                         </div>
                                     </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-card__pagination swiper-pagination"></div>
+                                </label>
                             </div>
-    
-                            <div class="product-card__info">
-                                <a href="#" class="product-card__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="product-card__group">
-                                    <div class="product-card__article article">Артикул: <span>1111</span></div>
-                                    <div class="product-card__barcode barcode">Штрихкод: <span>41122</span></div>
-                                </div>
-    
-                                <div class="product-card__quantity quantity-stock"> <span class="quantity-stock__quantity-color --yellow"></span>Достаточно</div>
-    
-                                <div class="product-card__group-price">
-                                    <div class="product-card__price">От <span class="product-card__price-value">720</span> р.</div>
-                                    <div class="product-card__price-old"><span class="product-card__price-value-old"></span></div>
-                                </div>
-    
-                                <div class="product-card__workload">Нагрузка: <span class="product-card__workload-value">30</span> кг/м</div>
-    
-                                <div class="product-card__group-button">
-                                    <a href="#" class="product-card__button-basket main-btn">Выбрать</a>
-                                    <div class="product-card__icon-prod"><img src="./img/icon-click-rail-button.png" alt=""></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="similarly-product__slide swiper-slide">
-                        <div class="similarly-product__slide product-card">
-                            <div class="product-card__sldier swiper-container">
-                                <div class="product-card__banner banner">
-                                    <div class="banner__item --news">Новинка</div>
-                                    <div class="banner__item --stock">Акция</div>
-                                    <div class="banner__item --hit">Хит продаж</div>
-                                </div>
-    
-                                <div class="product-card__fav favorites">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                    <path d="M11 19L9.55 17.7052C4.4 13.1243 1 10.103 1 6.3951C1 3.37384 3.42 1 6.5 1C8.24 1 9.91 1.79455 11 3.05014C12.09 1.79455 13.76 1 15.5 1C18.58 1 21 3.37384 21 6.3951C21 10.103 17.6 13.1243 12.45 17.715L11 19Z" stroke="#0079BE"/>
-                                    </svg>
-                                </div>
-                                <div class="product-card__slide-wrap swiper-wrapper">
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-card__pagination swiper-pagination"></div>
-                            </div>
-    
-                            <div class="product-card__info">
-                                <a href="#" class="product-card__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="product-card__group">
-                                    <div class="product-card__article article">Артикул: <span>1111</span></div>
-                                    <div class="product-card__barcode barcode">Штрихкод: <span>41122</span></div>
-                                </div>
-    
-                                <div class="product-card__quantity quantity-stock"> <span class="quantity-stock__quantity-color --yellow"></span>Достаточно</div>
-    
-                                <div class="product-card__group-price">
-                                    <div class="product-card__price">От <span class="product-card__price-value">720</span> р.</div>
-                                    <div class="product-card__price-old"><span class="product-card__price-value-old"></span></div>
-                                </div>
-    
-                                <div class="product-card__workload">Нагрузка: <span class="product-card__workload-value">30</span> кг/м</div>
-    
-                                <div class="product-card__group-button">
-                                    <a href="#" class="product-card__button-basket main-btn">Выбрать</a>
-                                    <div class="product-card__icon-prod"><img src="./img/icon-click-rail-button.png" alt=""></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="similarly-product__slide swiper-slide">
-                        <div class="similarly-product__slide product-card">
-                            <div class="product-card__sldier swiper-container">
-                                <div class="product-card__banner banner">
-                                    <div class="banner__item --news">Новинка</div>
-                                    <div class="banner__item --stock">Акция</div>
-                                    <div class="banner__item --hit">Хит продаж</div>
-                                </div>
-    
-                                <div class="product-card__fav favorites">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                    <path d="M11 19L9.55 17.7052C4.4 13.1243 1 10.103 1 6.3951C1 3.37384 3.42 1 6.5 1C8.24 1 9.91 1.79455 11 3.05014C12.09 1.79455 13.76 1 15.5 1C18.58 1 21 3.37384 21 6.3951C21 10.103 17.6 13.1243 12.45 17.715L11 19Z" stroke="#0079BE"/>
-                                    </svg>
-                                </div>
-                                <div class="product-card__slide-wrap swiper-wrapper">
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-card__pagination swiper-pagination"></div>
-                            </div>
-    
-                            <div class="product-card__info">
-                                <a href="#" class="product-card__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="product-card__group">
-                                    <div class="product-card__article article">Артикул: <span>1111</span></div>
-                                    <div class="product-card__barcode barcode">Штрихкод: <span>41122</span></div>
-                                </div>
-    
-                                <div class="product-card__quantity quantity-stock"> <span class="quantity-stock__quantity-color --yellow"></span>Достаточно</div>
-    
-                                <div class="product-card__group-price">
-                                    <div class="product-card__price">От <span class="product-card__price-value">720</span> р.</div>
-                                    <div class="product-card__price-old"><span class="product-card__price-value-old"></span></div>
-                                </div>
-    
-                                <div class="product-card__workload">Нагрузка: <span class="product-card__workload-value">30</span> кг/м</div>
-    
-                                <div class="product-card__group-button">
-                                    <a href="#" class="product-card__button-basket main-btn">Выбрать</a>
-                                    <div class="product-card__icon-prod"><img src="./img/icon-click-rail-button.png" alt=""></div>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="watch-product">
-    <div class="container">
-        <div class="watch-product__wrap">
-            <div class="watch-product__group">
-                <h2 class="watch-product__title title-h2">Вы просматривали</h2>
-                <div class="watch-product__buttons">
-                    <div class="watch-product__prev swiper-button-prev"></div>
-                    <div class="watch-product__next swiper-button-next"></div>
-                </div>
-            </div>
+                <div class="making-order__column">
+                    <div class="making-order__result order-result">
+                        <div class="order-result__row">
+                            <div class="order-result__title">Ваш заказ</div>
+                            <div class="order-result__group-info">
+                                <div class="order-result__product">
+                                    <div class="order-result__product-wrap">
+                                        <div class="order-result__name">Товары</div>
+                                        <div class="order-result__value"><span>10 000</span> р.</div>
+                                    </div>
+                                    <div class="order-result__product-quantity"><span>4 </span>шт.</div>
+                                </div>
 
+                                <div class="order-result__discount">
+                                    <div class="order-result__name">Скидка</div>
+                                    <div class="order-result__value"><span>- 2 000</span> р.</div>
+                                </div>
 
-            <div class="watch-product__sldier swiper-container">
-                <div class="watch-product__slide-wrap swiper-wrapper">
-                    <div class="watch-product__slide swiper-slide">
-                        <div class="watch-product__slide product-card">
-                            <div class="product-card__sldier swiper-container">
-                                <div class="product-card__banner banner">
-                                    <div class="banner__item --news">Новинка</div>
-                                    <div class="banner__item --stock">Акция</div>
-                                    <div class="banner__item --hit">Хит продаж</div>
+                                <div class="order-result__delivery">
+                                    <div class="order-result__name">Доставка</div>
+                                    <div class="order-result__value"><span>600</span> р.</div>
                                 </div>
-    
-                                <div class="product-card__fav favorites">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                    <path d="M11 19L9.55 17.7052C4.4 13.1243 1 10.103 1 6.3951C1 3.37384 3.42 1 6.5 1C8.24 1 9.91 1.79455 11 3.05014C12.09 1.79455 13.76 1 15.5 1C18.58 1 21 3.37384 21 6.3951C21 10.103 17.6 13.1243 12.45 17.715L11 19Z" stroke="#0079BE"/>
-                                    </svg>
+
+                                <div class="order-result__payment">
+                                    <div class="order-result__name">Оплата при получении</div>
                                 </div>
-                                <div class="product-card__slide-wrap swiper-wrapper">
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-card__pagination swiper-pagination"></div>
                             </div>
-    
-                            <div class="product-card__info">
-                                <a href="#" class="product-card__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="product-card__group">
-                                    <div class="product-card__article article">Артикул: <span>1111</span></div>
-                                    <div class="product-card__barcode barcode">Штрихкод: <span>41122</span></div>
-                                </div>
-    
-                                <div class="product-card__quantity quantity-stock"> <span class="quantity-stock__quantity-color --yellow"></span>Достаточно</div>
-    
-                                <div class="product-card__group-price">
-                                    <div class="product-card__price">От <span class="product-card__price-value">720</span> р.</div>
-                                    <div class="product-card__price-old"><span class="product-card__price-value-old"></span></div>
-                                </div>
-    
-                                <div class="product-card__workload">Нагрузка: <span class="product-card__workload-value">30</span> кг/м</div>
-    
-                                <div class="product-card__group-button">
-                                    <a href="#" class="product-card__button-basket main-btn">Выбрать</a>
-                                    <div class="product-card__icon-prod"><img src="./img/icon-click-rail-button.png" alt=""></div>
+
+                            <div class="order-result__group-service">
+                                <div class="order-result__title-service">Дополнительные услуги</div>
+                                <div class="order-result__list-service">
+                                    <div class="order-result__item-service">Развесовка лесок и крючков</div>
+                                    <div class="order-result__item-service">Консультация дизайнера</div>
+                                    <div class="order-result__item-service">Монтажные работы</div>
+                                    <div class="order-result__item-service">Покраска профиля</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="watch-product__slide swiper-slide">
-                        <div class="watch-product__slide product-card">
-                            <div class="product-card__sldier swiper-container">
-                                <div class="product-card__banner banner">
-                                    <div class="banner__item --news">Новинка</div>
-                                    <div class="banner__item --stock">Акция</div>
-                                    <div class="banner__item --hit">Хит продаж</div>
-                                </div>
-    
-                                <div class="product-card__fav favorites">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                    <path d="M11 19L9.55 17.7052C4.4 13.1243 1 10.103 1 6.3951C1 3.37384 3.42 1 6.5 1C8.24 1 9.91 1.79455 11 3.05014C12.09 1.79455 13.76 1 15.5 1C18.58 1 21 3.37384 21 6.3951C21 10.103 17.6 13.1243 12.45 17.715L11 19Z" stroke="#0079BE"/>
-                                    </svg>
-                                </div>
-                                <div class="product-card__slide-wrap swiper-wrapper">
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-card__pagination swiper-pagination"></div>
+                        <div class="order-result__row">
+                            <div class="order-result__price-result">
+                                <div class="order-result__title-price">Итого к оплате:</div>
+                                <div class="order-result__price"><span>8 845</span> р.</div>
                             </div>
-    
-                            <div class="product-card__info">
-                                <a href="#" class="product-card__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="product-card__group">
-                                    <div class="product-card__article article">Артикул: <span>1111</span></div>
-                                    <div class="product-card__barcode barcode">Штрихкод: <span>41122</span></div>
-                                </div>
-    
-                                <div class="product-card__quantity quantity-stock"> <span class="quantity-stock__quantity-color --yellow"></span>Достаточно</div>
-    
-                                <div class="product-card__group-price">
-                                    <div class="product-card__price">От <span class="product-card__price-value">720</span> р.</div>
-                                    <div class="product-card__price-old"><span class="product-card__price-value-old"></span></div>
-                                </div>
-    
-                                <div class="product-card__workload">Нагрузка: <span class="product-card__workload-value">30</span> кг/м</div>
-    
-                                <div class="product-card__group-button">
-                                    <a href="#" class="product-card__button-basket main-btn">Выбрать</a>
-                                    <div class="product-card__icon-prod"><img src="./img/icon-click-rail-button.png" alt=""></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="watch-product__slide swiper-slide">
-                        <div class="watch-product__slide product-card">
-                            <div class="product-card__sldier swiper-container">
-                                <div class="product-card__banner banner">
-                                    <div class="banner__item --news">Новинка</div>
-                                    <div class="banner__item --stock">Акция</div>
-                                    <div class="banner__item --hit">Хит продаж</div>
-                                </div>
-    
-                                <div class="product-card__fav favorites">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                    <path d="M11 19L9.55 17.7052C4.4 13.1243 1 10.103 1 6.3951C1 3.37384 3.42 1 6.5 1C8.24 1 9.91 1.79455 11 3.05014C12.09 1.79455 13.76 1 15.5 1C18.58 1 21 3.37384 21 6.3951C21 10.103 17.6 13.1243 12.45 17.715L11 19Z" stroke="#0079BE"/>
-                                    </svg>
-                                </div>
-                                <div class="product-card__slide-wrap swiper-wrapper">
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-card__pagination swiper-pagination"></div>
+                            <div class="order-result__button">
+                                <a href="#" class="order-result__button-add main-btn">Заказ подтверждаю</a>
+                                <a href="#" class="order-result__button-buy-oneclick main-btn animButton --blue" data-content="Заказ в один клик">Заказ в один клик</a>
                             </div>
-    
-                            <div class="product-card__info">
-                                <a href="#" class="product-card__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="product-card__group">
-                                    <div class="product-card__article article">Артикул: <span>1111</span></div>
-                                    <div class="product-card__barcode barcode">Штрихкод: <span>41122</span></div>
-                                </div>
-    
-                                <div class="product-card__quantity quantity-stock"> <span class="quantity-stock__quantity-color --yellow"></span>Достаточно</div>
-    
-                                <div class="product-card__group-price">
-                                    <div class="product-card__price">От <span class="product-card__price-value">720</span> р.</div>
-                                    <div class="product-card__price-old"><span class="product-card__price-value-old"></span></div>
-                                </div>
-    
-                                <div class="product-card__workload">Нагрузка: <span class="product-card__workload-value">30</span> кг/м</div>
-    
-                                <div class="product-card__group-button">
-                                    <a href="#" class="product-card__button-basket main-btn">Выбрать</a>
-                                    <div class="product-card__icon-prod"><img src="./img/icon-click-rail-button.png" alt=""></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="watch-product__slide swiper-slide">
-                        <div class="watch-product__slide product-card">
-                            <div class="product-card__sldier swiper-container">
-                                <div class="product-card__banner banner">
-                                    <div class="banner__item --news">Новинка</div>
-                                    <div class="banner__item --stock">Акция</div>
-                                    <div class="banner__item --hit">Хит продаж</div>
-                                </div>
-    
-                                <div class="product-card__fav favorites">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
-                                    <path d="M11 19L9.55 17.7052C4.4 13.1243 1 10.103 1 6.3951C1 3.37384 3.42 1 6.5 1C8.24 1 9.91 1.79455 11 3.05014C12.09 1.79455 13.76 1 15.5 1C18.58 1 21 3.37384 21 6.3951C21 10.103 17.6 13.1243 12.45 17.715L11 19Z" stroke="#0079BE"/>
-                                    </svg>
-                                </div>
-                                <div class="product-card__slide-wrap swiper-wrapper">
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-    
-                                    <div class="product-card__slide swiper-slide">
-                                        <div class="product-card__image">
-                                            <img src="./img/image-product-card-1.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-card__pagination swiper-pagination"></div>
-                            </div>
-    
-                            <div class="product-card__info">
-                                <a href="#" class="product-card__name">Настенная подвесная система «Рельс клик»</a>
-                                <div class="product-card__group">
-                                    <div class="product-card__article article">Артикул: <span>1111</span></div>
-                                    <div class="product-card__barcode barcode">Штрихкод: <span>41122</span></div>
-                                </div>
-    
-                                <div class="product-card__quantity quantity-stock"> <span class="quantity-stock__quantity-color --yellow"></span>Достаточно</div>
-    
-                                <div class="product-card__group-price">
-                                    <div class="product-card__price">От <span class="product-card__price-value">720</span> р.</div>
-                                    <div class="product-card__price-old"><span class="product-card__price-value-old"></span></div>
-                                </div>
-    
-                                <div class="product-card__workload">Нагрузка: <span class="product-card__workload-value">30</span> кг/м</div>
-    
-                                <div class="product-card__group-button">
-                                    <a href="#" class="product-card__button-basket main-btn">Выбрать</a>
-                                    <div class="product-card__icon-prod"><img src="./img/icon-click-rail-button.png" alt=""></div>
-                                </div>
+                            <div class="order-result__text">
+                                Нажимая кнопку “Зарегистрироваться” я даю свое согласие на обработку моих персональных 
+                                данных на условиях <a href="#">Соглашения об обработке персональных данных.</a><br>
+                                Личная информация защищена и не передается сторонним ресурсам.
                             </div>
                         </div>
                     </div>

@@ -673,6 +673,9 @@ $(document).ready(function () {
         theme: "my-theme",
     });
 
+    // Nice select
+    $('select').niceSelect();
+
     // Анимация скролла
     const animItems = $(".anim-items");
 
