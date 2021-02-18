@@ -628,7 +628,7 @@ if (buttonViewAllRev != null) {
     })
 }
 
-//============================ПЕРЕКЛЮЧЕНИЕ БУДЕТ ИСПОЛЗОВАТЬСЯ БИТРИКСА МОЖНО УДАЛЯТЬ============================
+//============================ПЕРЕКЛЮЧЕНИЕ ФОРМ ФИЗ И ЮР ЛИЦ, ЕСЛИ БУДЕТ ИСПОЛЗОВАТЬСЯ ОТ БИТРИКСА МОЙ СКРИПТ МОЖНО УДАЛЯТЬ============================
 // Переключение форм юр лица и физ лица
 let triggers = Array.prototype.slice.call(document.querySelectorAll(".form-contact__radio"));
 let arrInputLegal = Array.prototype.slice.call(document.querySelectorAll(".form-contact__input-wrap.--legal"));
@@ -647,6 +647,18 @@ triggers.forEach(el => {
     }
 });
 //============================================================================================================
+
+//==Рейтинг
+let arrRatingEl = Array.prototype.slice.call(document.querySelector(".popup-reviews-product__rating").querySelectorAll(".rating__item "));
+
+arrRatingEl.forEach((el, index, array) => {
+    el.addEventListener("click", () => {
+        array.forEach(element => element.classList.remove("added"));
+        for (let i = index; i <= 4; i++) {
+            array[i].classList.add("added");
+        }
+    });
+});
 
 $(document).ready(function () {
 
