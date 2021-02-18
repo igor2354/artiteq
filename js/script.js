@@ -267,13 +267,17 @@ var sliderproductAccessories = new Swiper('.product-accessories__slider', {
 
 
 // Ограничение текта отзывов
-let arrReviews = Array.prototype.slice.call(document.querySelectorAll(".card-review__text"));
+let blockReviewsIndexPage = document.querySelector(".blog");
 
-arrReviews.forEach((element, i) => {
-    if (element.textContent.length > 280) {
-        element.textContent = element.textContent.substring(0, 270) + "...";
-    }
-});
+if (blockReviewsIndexPage != null) {
+    let arrReviews = Array.prototype.slice.call(blockReviewsIndexPage.querySelectorAll(".card-review__text"));
+
+    arrReviews.forEach((element, i) => {
+        if (element.textContent.length > 280) {
+            element.textContent = element.textContent.substring(0, 270) + "...";
+        }
+    });
+}
 
 // Ограничение текста новостей
 let arrNews = Array.prototype.slice.call(document.querySelectorAll(".card-news__text"));
