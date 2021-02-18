@@ -2441,7 +2441,8 @@ input[type="number"] {
   opacity: 0;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+  transition: all 0.3s ease;
+  overflow: auto; }
 
 .popup-general {
   display: none;
@@ -2524,19 +2525,19 @@ input[type="number"] {
   .popup-general__close, .popup-reviews__close, .popup-reviews-product__close, .popup-install-work__close, .popup-oneclick__close, .popup-add-basket__close, .popup-result-message__close {
     cursor: pointer;
     position: absolute;
-    width: 30px;
-    height: 30px;
-    right: -35px;
-    top: -35px;
+    width: 20px;
+    height: 20px;
+    left: 25px;
+    top: 10px;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
     .popup-general__close::before, .popup-reviews__close::before, .popup-reviews-product__close::before, .popup-install-work__close::before, .popup-oneclick__close::before, .popup-add-basket__close::before, .popup-result-message__close::before {
       content: "";
       position: absolute;
-      width: 30px;
       height: 2px;
-      top: 15px;
+      width: 20px;
+      top: 9px;
       background-color: #333333;
       -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
@@ -2544,9 +2545,9 @@ input[type="number"] {
     .popup-general__close::after, .popup-reviews__close::after, .popup-reviews-product__close::after, .popup-install-work__close::after, .popup-oneclick__close::after, .popup-add-basket__close::after, .popup-result-message__close::after {
       content: "";
       position: absolute;
-      width: 30px;
       height: 2px;
-      top: 15px;
+      width: 20px;
+      top: 9px;
       background-color: #333333;
       -webkit-transform: rotate(-45deg);
           -ms-transform: rotate(-45deg);
@@ -2597,17 +2598,6 @@ input[type="number"] {
     text-align: center; }
 
 @media (max-width: 1470px) {
-  .popup-general__close, .popup-reviews__close, .popup-reviews-product__close, .popup-install-work__close, .popup-oneclick__close, .popup-add-basket__close, .popup-result-message__close {
-    width: 20px;
-    height: 20px;
-    left: 25px;
-    top: 10px; }
-    .popup-general__close::before, .popup-reviews__close::before, .popup-reviews-product__close::before, .popup-install-work__close::before, .popup-oneclick__close::before, .popup-add-basket__close::before, .popup-result-message__close::before {
-      width: 20px;
-      top: 9px; }
-    .popup-general__close::after, .popup-reviews__close::after, .popup-reviews-product__close::after, .popup-install-work__close::after, .popup-oneclick__close::after, .popup-add-basket__close::after, .popup-result-message__close::after {
-      width: 20px;
-      top: 9px; }
   .popup-general__column.--first {
     padding: 40px 25px 40px 60px; } }
 

@@ -367,6 +367,7 @@ openButton.forEach(element => {
     element.addEventListener("click", function (e) {
         e.preventDefault()
         document.querySelector(`#${this.dataset.popup}`).classList.add("active");
+        document.querySelector(`#${this.dataset.popup}`).style.maxHeight = `${window.innerHeight}px`;
         popupOverlay.classList.add("active");
         setTimeout(() => {
             document.querySelector(`#${this.dataset.popup}`).style.opacity = "1";
@@ -390,6 +391,7 @@ closeButton.forEach(element => {
         }, 300)
         getParents(element, "modal").style.opacity = "0";
         popupOverlay.style.opacity = "0";
+        getParents(element, "modal").style.maxHeight = ``;
         body.classList.remove("lock-modal");
     })
 });
@@ -403,6 +405,7 @@ popupOverlay.addEventListener("click", function () {
             }, 300)
             element.style.opacity = "0";
             popupOverlay.style.opacity = "0";
+            element.style.maxHeight = ``;
             body.classList.remove("lock-modal");
         }
     });
