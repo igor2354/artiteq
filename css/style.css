@@ -629,7 +629,7 @@ input[type="number"] {
   padding: 5px 0;
   background-color: #fff;
   border-bottom: 1px solid rgba(127, 135, 141, 0.25);
-  z-index: 1000; }
+  z-index: 100; }
   .mob-menu__ham {
     position: relative;
     left: -10px; }
@@ -1041,7 +1041,7 @@ input[type="number"] {
     top: 55px;
     padding-top: 15px;
     width: 100%;
-    z-index: 100;
+    z-index: 90;
     background-color: #fff; }
     .catalog-menu .container {
       padding: 0; }
@@ -2004,7 +2004,7 @@ input[type="number"] {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 500;
+  z-index: 99;
   opacity: 0;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -2441,8 +2441,7 @@ input[type="number"] {
   opacity: 0;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  overflow: auto; }
+  transition: all 0.3s ease; }
 
 .popup-general {
   display: none;
@@ -2525,10 +2524,12 @@ input[type="number"] {
   .popup-general__close, .popup-reviews__close, .popup-reviews-product__close, .popup-install-work__close, .popup-oneclick__close, .popup-add-basket__close, .popup-result-message__close {
     cursor: pointer;
     position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 25px;
-    top: 10px;
+    width: 32px;
+    height: 32px;
+    right: -25px;
+    top: -25px;
+    border-radius: 50%;
+    background-color: #fff;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
@@ -2536,8 +2537,9 @@ input[type="number"] {
       content: "";
       position: absolute;
       height: 2px;
+      top: 15px;
+      left: 6px;
       width: 20px;
-      top: 9px;
       background-color: #333333;
       -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
@@ -2546,8 +2548,9 @@ input[type="number"] {
       content: "";
       position: absolute;
       height: 2px;
+      top: 15px;
+      left: 6px;
       width: 20px;
-      top: 9px;
       background-color: #333333;
       -webkit-transform: rotate(-45deg);
           -ms-transform: rotate(-45deg);
@@ -2598,6 +2601,11 @@ input[type="number"] {
     text-align: center; }
 
 @media (max-width: 1470px) {
+  .modal {
+    overflow: auto; }
+  .popup-general__close, .popup-reviews__close, .popup-reviews-product__close, .popup-install-work__close, .popup-oneclick__close, .popup-add-basket__close, .popup-result-message__close {
+    right: 25px;
+    top: 10px; }
   .popup-general__column.--first {
     padding: 40px 25px 40px 60px; } }
 
