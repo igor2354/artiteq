@@ -860,15 +860,162 @@
 
 <div class="popup-sign-in modal" id="sign-in">
   <div class="popup-sign-in__body">
+    <div class="popup-sign-in__title">Войти в личный кабинет</div>
+    <form action="#" class="popup-sign-in__from">
+      <div class="popup-sign-in__wrap-input">
+        <input type="text" placeholder="E-mail*">
+      </div>
+
+      <div class="popup-sign-in__wrap-input">
+        <input type="password" class="js-view-password" placeholder="Пароль*">
+        <img class="popup-sign-in__icon-view-password icon-view-password" src="./img/icon-view-password.svg" alt="">
+      </div>
+
+      <div class="popup-sign-in__error">Заполните все обязательные поля*</div>
+
+      <div class="popup-sign-in__error">Неверный логин или пароль*</div>
+
+      <div class="popup-sign-in__button">
+        <input class="main-btn" type="submit" value="Войти">
+      </div>
+    </form>
+
+    <div class="popup-sign-in__group">
+      <a href="#" class="popup-sign-in__button-password js-modal-show" data-popup="recovery-pass">Забыли пароль</a>
+      <a href="#" class="popup-sign-in__button-register js-modal-show" data-popup="sign-up">Зарегистрироваться</a>
+    </div>
     <div class="popup-sign-in__close js-modal-close"></div>
-    <div class="title-h2">В РАЗРАБОТКЕ</div>
   </div>
 </div>
 
 <div class="popup-sign-up modal" id="sign-up">
   <div class="popup-sign-up__body">
+    <div class="popup-sign-up__title">Регистрация</div>
+
+    <form action="#" class="popup-sign-up__form">
+      <div class="popup-sign-up__group">
+        <label class="popup-sign-up__radio js-trigger-legal">
+          <input name="user" type="radio" checked>
+          <span class="popup-sign-up__radio-text">Физическое лицо</span>
+        </label>
+
+        <label class="popup-sign-up__radio js-trigger-legal --legal">
+          <input name="user" type="radio" >
+          <span class="popup-sign-up__radio-text">Юридическое лицо</span>
+        </label>
+      </div>
+
+      <div class="popup-sign-up__wrap-form">
+        <div class="popup-sign-up__wrap-input">
+          <input class="popup-sign-up__input" type="text" placeholder="Ваше ФИО *">
+        </div>
+
+        <div class="popup-sign-up__wrap-input">
+            <input class="popup-sign-up__input" type="tel" placeholder="Ваш телефон *">
+        </div>
+
+        <div class="popup-sign-up__wrap-input">
+            <input class="popup-sign-up__input" type="text" placeholder="Ваш E-mail *">
+        </div>
+
+        <div class="popup-sign-up__group-input --select">
+          <div class="popup-sign-up__wrap-input js-from-wrap-input --legal">
+            <select name="">
+                <option value="ИП">ИП</option>
+                <option value="ООО">ООО</option>
+                <option value="АО">АО</option>
+            </select>
+          </div>
+
+          <div class="popup-sign-up__wrap-input js-from-wrap-input --legal">
+            <input class="popup-sign-up__input" type="text" placeholder="Название организации">
+          </div>
+        </div>
+
+        <div class="popup-sign-up__wrap-input js-from-wrap-input --legal">
+          <input class="popup-sign-up__input" type="text" placeholder="Юридический адрес">
+        </div>
+
+        <div class="popup-sign-up__group-input">
+          <div class="popup-sign-up__wrap-input js-from-wrap-input --legal">
+            <input class="popup-sign-up__input" type="text" placeholder="ИНН">
+          </div>
+
+          <div class="popup-sign-up__wrap-input js-from-wrap-input --legal">
+            <input class="popup-sign-up__input" type="text" placeholder="КПП">
+          </div>
+        </div>
+
+        <div class="popup-sign-up__group-input">
+          <div class="popup-sign-up__wrap-input js-from-wrap-input --legal">
+            <input class="popup-sign-up__input" type="text" placeholder="БИК">
+          </div>
+
+          <div class="popup-sign-up__wrap-input js-from-wrap-input --legal">
+              <input class="popup-sign-up__input" type="text" placeholder="Банк">
+          </div>
+        </div>
+
+        <div class="popup-sign-up__group-input">
+          <div class="popup-sign-up__wrap-input js-from-wrap-input --legal">
+            <input class="popup-sign-up__input" type="text" placeholder="Коор. счет">
+          </div>
+
+          <div class="popup-sign-up__wrap-input js-from-wrap-input --legal">
+              <input class="popup-sign-up__input" type="text" placeholder="Расчетный счет">
+          </div>
+        </div>
+      </div>
+
+      <div class="popup-sign-in__error">Заполните все обязательные поля*</div>
+
+      <div class="popup-sign-in__error">Неверный логин или пароль*</div>
+
+      <div class="popup-sign-up__button">
+        <input class="main-btn" type="submit" value="Зарегистрироваться">
+      </div>
+    </form>
+
+    <div class="popup-sign-up__subtext">
+      Нажимая кнопку "Получить каталог" я даю своё согласие на обработку моих персональных данных на условиях 
+      <a href="#">Соглашения об обработке персональных данных.</a> 
+      Личная информация защищена и не передаётся сторонним ресурсам.
+    </div>
+
+    <div class="popup-sign-up__group-back">
+      Уже зарегистрированы? 
+      <a href="#" class="popup-sign-up__button-back js-modal-show" data-popup="sign-in">Войти</a>
+    </div>
+
     <div class="popup-sign-up__close js-modal-close"></div>
-    <div class="title-h2">В РАЗРАБОТКЕ</div>
+  </div>
+</div>
+
+<div class="popup-recovery-pass modal" id="recovery-pass">
+  <div class="popup-recovery-pass__body">
+    <div class="popup-recovery-pass__title">Восстановление пароля</div>
+    <form action="#" class="popup-recovery-pass__from">
+
+      <div class="popup-recovery-pass__text">
+        Укажите адрес электронной почты.<br>
+        Мы вышлем подробные инструкции по восстановлению пароля.
+      </div>
+
+      <div class="popup-recovery-pass__wrap-input">
+        <input type="text" placeholder="E-mail*">
+      </div>
+
+      <div class="popup-recovery-pass__error">Заполните все обязательные поля*</div>
+
+      <div class="popup-recovery-pass__button">
+        <input class="main-btn" type="submit" value="Восстановить пароль">
+      </div>
+    </form>
+
+    <div class="popup-recovery-pass__group">
+      <a href="#" class="popup-recovery-pass__button-back js-modal-show" data-popup="sign-in">Вернуться к авторизации</a>
+    </div>
+    <div class="popup-recovery-pass__close js-modal-close"></div>
   </div>
 </div>
 
@@ -1278,6 +1425,17 @@
 <div class="popup-overlay"></div>
 
 <div class="popup-overlay-modal"></div>
+
+<div class="popup-cookies">
+  <div class="popup-cookies__title">Artiteq использует файлы cookie</div>
+  <div class="popup-cookies__group">
+    <div class="popup-cookies__text">Файлы cookie обеспечивают правильную и безопасную работу нашего сайта. 
+      Соглашаясь или продолжая просмотр сайта, вы разрешаете их использование.
+    </div>
+    <div class="popup-cookies__button"><a href="#" class="js-cookies-close">ОК</a></div>
+  </div>
+  <a href="#" class="popup-cookies__more-cookies">Дополнительная информация о файлах cookie</a>
+</div>
 
 </div>
 

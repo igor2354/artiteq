@@ -267,11 +267,10 @@ var sliderproductAccessories = new Swiper('.product-accessories__slider', {
 
 
 // Ограничение текта отзывов
-let blockReviewsIndexPage = document.querySelector(".blog");
+let blockReviewsIndexPage = document.querySelector(".reviews");
 
 if (blockReviewsIndexPage != null) {
     let arrReviews = Array.prototype.slice.call(blockReviewsIndexPage.querySelectorAll(".card-review__text"));
-
     arrReviews.forEach((element, i) => {
         if (element.textContent.length > 280) {
             element.textContent = element.textContent.substring(0, 270) + "...";
@@ -367,52 +366,79 @@ function getParents(elem, className) {
     return parents;
 }
 
-openButton.forEach(element => {
-    element.addEventListener("click", function (e) {
-        e.preventDefault()
-        document.querySelector(`#${this.dataset.popup}`).classList.add("active");
-        document.querySelector(`#${this.dataset.popup}`).style.maxHeight = `${window.innerHeight}px`;
-        popupOverlay.classList.add("active");
-        setTimeout(() => {
-            document.querySelector(`#${this.dataset.popup}`).style.opacity = "1";
-            popupOverlay.style.opacity = "1";
-        }, 100)
-        body.classList.add("lock-modal");
+function openPopup(e) {
+    e.preventDefault();
+    let modal = document.querySelector(`#${e.target.dataset.popup}`);
 
-        if (this.dataset.popup == "domain") {
-            let domainList = document.querySelector(`#${this.dataset.popup}`).querySelector(".popup-domain__list");
-            let domainWrap = document.querySelector(`#${this.dataset.popup}`).querySelector(".popup-domain__wrap");
-            domainList.style.height = `${window.innerHeight - domainWrap.offsetHeight - 40}px`;
-        }
-    });
-});
+    modal.classList.add("active");
+    modal.style.maxHeight = `${window.innerHeight}px`;
 
-closeButton.forEach(element => {
-    element.addEventListener("click", function () {
-        setTimeout(() => {
-            getParents(element, "modal").classList.remove("active");
-            popupOverlay.classList.remove("active");
-        }, 300)
-        getParents(element, "modal").style.opacity = "0";
-        popupOverlay.style.opacity = "0";
-        getParents(element, "modal").style.maxHeight = ``;
-        body.classList.remove("lock-modal");
-    })
-});
+    body.classList.add("lock-modal");
 
-popupOverlay.addEventListener("click", function () {
+    popupOverlay.classList.add("active");
+
+    setTimeout(() => {
+        modal.style.opacity = "1";
+        popupOverlay.style.opacity = "1";
+    }, 100)
+
+    if (e.target.dataset.popup == "domain") {
+        let domainList = modal.querySelector(".popup-domain__list");
+        let domainWrap = modal.querySelector(".popup-domain__wrap");
+        domainList.style.height = `${window.innerHeight - domainWrap.offsetHeight - 40}px`;
+    }
+}
+
+function closePopup() {
     popupAllElem.forEach(element => {
         if (element.classList.contains("active")) {
+            let modal = element;
+
+            modal.style.maxHeight = ``;
+            popupOverlay.classList.remove("active");
             setTimeout(() => {
-                element.classList.remove("active");
-                popupOverlay.classList.remove("active");
+                modal.classList.remove("active");
+
             }, 300)
-            element.style.opacity = "0";
+
+            modal.style.opacity = "0";
             popupOverlay.style.opacity = "0";
-            element.style.maxHeight = ``;
+
             body.classList.remove("lock-modal");
         }
+    })
+}
+
+openButton.forEach(element => {
+    element.addEventListener("click", (e) => {
+        closePopup(e);
+
+        openPopup(e);
+    })
+})
+
+closeButton.forEach(element => {
+    element.addEventListener("click", (e) => {
+        closePopup();
     });
+});
+
+popupOverlay.addEventListener("click", () => {
+    closePopup();
+});
+
+
+// Показать скрыть пароль
+let elViewPass = document.querySelector(".icon-view-password");
+
+elViewPass.addEventListener("click", (e) => {
+    let inputPassword = e.target.parentNode.querySelector("input");
+
+    if (inputPassword.getAttribute("type") == "text") {
+        inputPassword.setAttribute("type", "password");
+    } else {
+        inputPassword.setAttribute("type", "text");
+    }
 })
 
 // Сортирока поддоменов
@@ -637,11 +663,12 @@ if (buttonViewAllRev != null) {
 
 //============================ПЕРЕКЛЮЧЕНИЕ ФОРМ ФИЗ И ЮР ЛИЦ, ЕСЛИ БУДЕТ ИСПОЛЗОВАТЬСЯ ОТ БИТРИКСА МОЙ СКРИПТ МОЖНО УДАЛЯТЬ============================
 // Переключение форм юр лица и физ лица
-let triggers = Array.prototype.slice.call(document.querySelectorAll(".form-contact__radio"));
-let arrInputLegal = Array.prototype.slice.call(document.querySelectorAll(".form-contact__input-wrap.--legal"));
+let triggers = Array.prototype.slice.call(document.querySelectorAll(".js-trigger-legal"));
 
 triggers.forEach(el => {
     el.onchange = () => {
+        let arrInputLegal = Array.prototype.slice.call(el.parentNode.parentNode.querySelectorAll(".js-from-wrap-input.--legal"));
+
         if (el.classList.contains("--legal") && el.querySelector("input").checked) {
             arrInputLegal.forEach(element => {
                 element.style.display = "block";
@@ -666,6 +693,12 @@ arrRatingEl.forEach((el, index, array) => {
         }
     });
 });
+
+//== Закрыть куки
+
+document.querySelector(".js-cookies-close").addEventListener("click", (e) => {
+    document.querySelector(".popup-cookies").style.display = "none";
+})
 
 $(document).ready(function () {
 
