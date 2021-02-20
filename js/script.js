@@ -529,12 +529,14 @@ let buttonSub = Array.prototype.slice.call(document.querySelectorAll(".quantity-
 if (buttonAdd != null) {
     buttonAdd.forEach(el => {
         let productPriceContainer = el.parentNode.parentNode.querySelector(".price-product__current-price.js-price-quantity span");
-        let productPrice = parseInt(productPriceContainer.textContent.replace(/\s/g, ''));
+        let productPrice = productPriceContainer ? parseInt(productPriceContainer.textContent.replace(/\s/g, '')) : null;
         el.addEventListener("click", () => {
             let inputQuantity = el.parentNode.querySelector(".quantity-order__input");
             inputQuantity.value = parseInt(inputQuantity.value) + 1;
 
-            productPriceContainer.textContent = productPrice + parseInt(productPriceContainer.textContent.replace(/\s/g, ''));
+            if (productPrice != null) {
+                productPriceContainer.textContent = productPrice + parseInt(productPriceContainer.textContent.replace(/\s/g, ''));
+            }
         });
     })
 }
@@ -542,13 +544,15 @@ if (buttonAdd != null) {
 if (buttonSub != null) {
     buttonSub.forEach(el => {
         let productPriceContainer = el.parentNode.parentNode.querySelector(".price-product__current-price.js-price-quantity span");
-        let productPrice = parseInt(productPriceContainer.textContent.replace(/\s/g, ''));
+        let productPrice = productPriceContainer ? parseInt(productPriceContainer.textContent.replace(/\s/g, '')) : null;
         let inputQuantity = el.parentNode.querySelector(".quantity-order__input");
         el.addEventListener("click", () => {
             if (parseInt(inputQuantity.value) - 1 > 0) {
                 inputQuantity.value = parseInt(inputQuantity.value) - 1;
 
-                productPriceContainer.textContent = parseInt(productPriceContainer.textContent.replace(/\s/g, '')) - productPrice;
+                if (productPrice != null) {
+                    productPriceContainer.textContent = parseInt(productPriceContainer.textContent.replace(/\s/g, '')) - productPrice;
+                }
             }
         });
     });
@@ -697,6 +701,7 @@ arrRatingEl.forEach((el, index, array) => {
 //== Закрыть куки
 
 document.querySelector(".js-cookies-close").addEventListener("click", (e) => {
+    e.preventDefault();
     document.querySelector(".popup-cookies").style.display = "none";
 })
 
@@ -749,6 +754,19 @@ $(document).ready(function () {
     $(".popup-domain__list").mCustomScrollbar({
         theme: "my-theme",
     });
+
+    $(".step-two__group").mCustomScrollbar({
+        theme: "my-theme-2",
+    });
+
+    $(".step-three__list").mCustomScrollbar({
+        theme: "my-theme-2",
+    });
+
+    $(".step-basket__list").mCustomScrollbar({
+        theme: "my-theme-2",
+    });
+
 
     // Nice select
     $('select').niceSelect();
