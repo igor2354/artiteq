@@ -827,19 +827,23 @@ $(document).ready(function () {
         theme: "my-theme-2",
     });
 
-    $(".step-three__list").mCustomScrollbar({
-        theme: "my-theme-2",
-    });
+    // $(".step-three__list").mCustomScrollbar({
+    //     theme: "my-theme-2",
+    // });
 
-    $(".step-basket__list").mCustomScrollbar({
-        theme: "my-theme-2",
-    });
+    // $(".step-basket__list").mCustomScrollbar({
+    //     theme: "my-theme-2",
+    // });
 
-    $(".step-six__group").mCustomScrollbar({
-        theme: "my-theme-2",
-    });
+    // $(".step-six__group").mCustomScrollbar({
+    //     theme: "my-theme-2",
+    // });
 
-    $(".popup-configurator").mCustomScrollbar({
+    // $(".popup-configurator").mCustomScrollbar({
+    //     theme: "my-theme-2",
+    // });
+
+    $(".popup-configurator__wrap-scroll").mCustomScrollbar({
         theme: "my-theme-2",
     });
 

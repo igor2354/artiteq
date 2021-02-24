@@ -2797,7 +2797,7 @@ input[type="number"] {
     line-height: 100%;
     color: #ffffff; }
   .popup-configurator__wrap {
-    padding: 50px 50px 60px 50px; }
+    padding: 15px 50px 20px 50px; }
   .popup-configurator__progress-bar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2805,7 +2805,7 @@ input[type="number"] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-bottom: 75px; }
+    margin-bottom: 55px; }
   .popup-configurator__rail {
     position: relative;
     -webkit-box-flex: 1;
@@ -2899,9 +2899,11 @@ input[type="number"] {
     display: none; }
     .popup-configurator__wrap-step.current-step {
       display: block; }
+  .popup-configurator__wrap-scroll {
+    max-height: 350px; }
   .popup-configurator__close {
-    right: 15px !important;
-    top: 15px !important; }
+    right: 25px !important;
+    top: 30px !important; }
 
 .step-one__list {
   display: grid;
@@ -3112,6 +3114,7 @@ input[type="number"] {
     color: #0079be; }
 
 .step-two__button-wrap {
+  padding-top: 20px;
   text-align: center; }
 
 .step-two__button-prev {
@@ -3130,14 +3133,13 @@ input[type="number"] {
   margin-bottom: 50px; }
 
 .step-three__list {
-  max-height: 590px; }
-  .step-three__list .mCSB_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;
-    grid-gap: 10px; }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 10px; }
 
 .step-three__button-wrap {
+  padding-top: 20px;
   text-align: center; }
 
 .step-three__button-prev {
@@ -3244,12 +3246,10 @@ input[type="number"] {
     color: #333333; }
   .step-basket__wrap {
     padding: 25px 0 0 20px; }
-  .step-basket__list {
-    max-height: 370px; }
-    .step-basket__list .mCSB_inside > .mCSB_container {
-      margin-right: 0; }
-    .step-basket__list .mCustomScrollBox {
-      padding-right: 20px; }
+  .step-basket__list .mCSB_inside > .mCSB_container {
+    margin-right: 0; }
+  .step-basket__list .mCustomScrollBox {
+    padding-right: 20px; }
   .step-basket__item {
     display: grid;
     grid-template-columns: 1fr 0.2fr;
@@ -3309,10 +3309,11 @@ input[type="number"] {
 .step-five__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px; }
+  grid-gap: 30px;
+  padding: 10px 0; }
 
 .step-five__baner {
-  margin-top: 80px;
+  margin-top: 40px;
   position: relative;
   padding: 37px 50px;
   background: url("../img/bg-configurator-baner.png") no-repeat center/cover; }
@@ -3333,6 +3334,10 @@ input[type="number"] {
   position: absolute;
   right: 0;
   bottom: 0; }
+  .step-five__image-bg img {
+    height: 230px;
+    -o-object-fit: cover;
+       object-fit: cover; }
 
 .step-five__button-prev {
   margin-right: 20px;
@@ -3368,9 +3373,6 @@ input[type="number"] {
   font-size: 22px;
   line-height: 42px;
   color: #333333; }
-
-.step-six__group {
-  max-height: 324px; }
 
 .step-six__option-wrap {
   margin-bottom: 16px; }
@@ -3408,7 +3410,8 @@ input[type="number"] {
   color: #999999; }
 
 .step-six__services-wrap {
-  margin-top: 45px;
+  margin-top: 25px;
+  padding: 15px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3480,10 +3483,7 @@ input[type="number"] {
   .popup-general__column.--first {
     padding: 40px 25px 40px 60px; }
   .step-two__name-option {
-    margin-right: 20px; }
-  .popup-configurator__close {
-    right: 5px !important;
-    top: 5px !important; } }
+    margin-right: 20px; } }
 
 @media (max-width: 1170px) {
   .popup-general__title, .popup-result-message__title {
@@ -3555,9 +3555,7 @@ input[type="number"] {
 
 @media (max-width: 992px) {
   .step-six__list {
-    grid-template-columns: repeat(2, 1fr); }
-  .step-six__group {
-    max-height: 150px; } }
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media (max-width: 768px) {
   .popup-general__column.--first {
@@ -3754,7 +3752,9 @@ input[type="number"] {
   .popup-configurator__bar-item span {
     padding: 5px 10px;
     font-size: 11px; }
-  .step-three__list .mCSB_container {
+  .popup-configurator__wrap-scroll {
+    max-height: 200px; }
+  .step-three__list {
     grid-template-columns: 1fr; }
   .step-five__hint-popup {
     left: -23px !important;
