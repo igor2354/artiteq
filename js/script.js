@@ -356,17 +356,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let popupOverlay = document.querySelector(".popup-overlay");
     let body = document.querySelector("body");
 
-    function getParents(elem, className) {
-        let parents;
-        while (elem.parentNode && elem.parentNode.nodeName.toLowerCase() != 'body') {
-            elem = elem.parentNode;
-            if (elem.classList.contains(className)) {
-                parents = elem;
-            }
-        }
-        return parents;
-    }
-
     function openPopup(e) {
         e.preventDefault();
         let modal = document.querySelector(`#${e.target.dataset.popup}`);
@@ -709,47 +698,77 @@ document.addEventListener('DOMContentLoaded', function () {
 }, false);
 
 //== Конфигуратор
+let popupConfigurator = document.querySelector(".popup-configurator");
 let buttonNext = Array.prototype.slice.call(document.querySelectorAll(".js-config-button-next"));
 let buttonPrev = Array.prototype.slice.call(document.querySelectorAll(".js-config-button-prev"));
 let elStep = Array.prototype.slice.call(document.querySelectorAll(".popup-configurator__wrap-step"));
 let elProgressBar = Array.prototype.slice.call(document.querySelectorAll(".popup-configurator__bar-item"));
 let elProgressRail = document.querySelector(".popup-configurator__rail-bar");
-console.log(buttonNext);
-console.log(buttonPrev);
-console.log(elStep);
+let stepConfig = document.querySelector(".popup-configurator__step");
 
-if (buttonNext != null) {
-    let widthOneStep = 0;
+
+function getParents(elem, className) {
+    let parents;
+    while (elem.parentNode && elem.parentNode.nodeName.toLowerCase() != 'body') {
+        elem = elem.parentNode;
+        if (elem.classList.contains(className)) {
+            parents = elem;
+        }
+    }
+    return parents;
+}
+
+let widthOneStep = 100 / 10;
+
+if (popupConfigurator !== null) {
+    elProgressRail.style.width = widthOneStep + "%";
+
+    elStep.forEach(element => {
+        if (element.classList.contains("current-step")) {
+            stepConfig.textContent = "Шаг " + element.dataset.step;
+        }
+    });
+
     buttonNext.forEach(element => {
         element.addEventListener("click", (e) => {
             e.preventDefault();
 
-            elStep[parseInt(e.target.dataset.step) - 1].classList.remove("current-step");
-            elStep[parseInt(e.target.dataset.step)].classList.add("current-step");
+            let currentStep = getParents(element, "popup-configurator__wrap-step");
 
-            widthOneStep += 20;
+            elStep[parseInt(currentStep.dataset.step) - 1].classList.remove("current-step");
+            elStep[parseInt(currentStep.dataset.step)].classList.add("current-step");
+
+            widthOneStep += 100 / 5;
             elProgressRail.style.width = widthOneStep + "%";
 
-            elProgressBar[parseInt(e.target.dataset.step)].classList.add("current");
+            stepConfig.textContent = "Шаг " + (parseInt(currentStep.dataset.step) + 1);
 
-            elProgressBar[parseInt(e.target.dataset.step) - 1].querySelector("span").classList.remove("active");
-            elProgressBar[parseInt(e.target.dataset.step)].querySelector("span").classList.add("active");
+            elProgressBar[parseInt(currentStep.dataset.step)].classList.add("current");
+
+            elProgressBar[parseInt(currentStep.dataset.step) - 1].querySelector("span").classList.remove("active");
+            elProgressBar[parseInt(currentStep.dataset.step)].querySelector("span").classList.add("active");
         })
     });
-}
 
-if (buttonPrev != null) {
     buttonPrev.forEach(element => {
         element.addEventListener("click", (e) => {
             e.preventDefault();
 
-            elStep[parseInt(e.target.dataset.step) - 1].classList.remove("current-step");
-            elStep[parseInt(e.target.dataset.step) - 2].classList.add("current-step");
+            let currentStep = getParents(element, "popup-configurator__wrap-step");
 
-            elProgressBar[parseInt(e.target.dataset.step) - 1].classList.remove("current");
+            elStep[parseInt(currentStep.dataset.step) - 1].classList.remove("current-step");
+            elStep[parseInt(currentStep.dataset.step) - 2].classList.add("current-step");
 
-            elProgressBar[parseInt(e.target.dataset.step) - 1].querySelector("span").classList.remove("active");
-            elProgressBar[parseInt(e.target.dataset.step) - 2].querySelector("span").classList.add("active");
+            widthOneStep -= 100 / 5;
+
+            elProgressRail.style.width = widthOneStep + "%";
+
+            stepConfig.textContent = "Шаг " + (parseInt(currentStep.dataset.step) - 1);
+
+            elProgressBar[parseInt(currentStep.dataset.step) - 1].classList.remove("current");
+
+            elProgressBar[parseInt(currentStep.dataset.step) - 1].querySelector("span").classList.remove("active");
+            elProgressBar[parseInt(currentStep.dataset.step) - 2].querySelector("span").classList.add("active");
         })
     });
 }
