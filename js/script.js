@@ -721,6 +721,56 @@ function getParents(elem, className) {
 let widthOneStep = 100 / 10;
 
 if (popupConfigurator !== null) {
+    // Проверка первого шага
+    let stepOneItem = Array.prototype.slice.call(document.querySelectorAll(".step-one__checkbox input"));
+
+    stepOneItem.forEach(element => {
+        element.addEventListener("change", () => {
+            for (let i = 0; i < stepOneItem.length; i++) {
+                if (stepOneItem[i].checked) {
+                    buttonNext[getParents(element, "popup-configurator__wrap-step").dataset.step - 1].classList.add("next-step-allowed");
+                    break;
+                } else {
+                    buttonNext[getParents(element, "popup-configurator__wrap-step").dataset.step - 1].classList.remove("next-step-allowed");
+                };
+            };
+        });
+    });
+
+    // Проверка второго шага
+    let stepTwoItem = Array.prototype.slice.call(document.querySelectorAll(".step-two__value input"));
+
+    stepTwoItem.forEach(element => {
+        element.addEventListener("change", () => {
+            let sumValue = 0;
+            for (let i = 0; i < stepTwoItem.length; i++) {
+                sumValue += parseInt(stepTwoItem[i].value);
+            }
+            if (sumValue > 0) {
+                buttonNext[getParents(element, "popup-configurator__wrap-step").dataset.step - 1].classList.add("next-step-allowed");
+            } else {
+                buttonNext[getParents(element, "popup-configurator__wrap-step").dataset.step - 1].classList.remove("next-step-allowed");
+            }
+        });
+    });
+
+    // Проверка пятого шага
+    let stepFiveItem = Array.prototype.slice.call(document.querySelectorAll(".step-five__checkbox input"));
+
+    stepFiveItem.forEach(element => {
+        element.addEventListener("change", () => {
+            for (let i = 0; i < stepFiveItem.length; i++) {
+                if (stepFiveItem[i].checked) {
+                    buttonNext[getParents(element, "popup-configurator__wrap-step").dataset.step - 1].classList.add("next-step-allowed");
+                    break;
+                } else {
+                    buttonNext[getParents(element, "popup-configurator__wrap-step").dataset.step - 1].classList.remove("next-step-allowed");
+                };
+            };
+        });
+    });
+
+
     elProgressRail.style.width = widthOneStep + "%";
 
     elStep.forEach(element => {
@@ -771,6 +821,7 @@ if (popupConfigurator !== null) {
             elProgressBar[parseInt(currentStep.dataset.step) - 2].querySelector("span").classList.add("active");
         })
     });
+
 }
 
 $(document).ready(function () {
@@ -823,9 +874,9 @@ $(document).ready(function () {
         theme: "my-theme",
     });
 
-    $(".step-two__group").mCustomScrollbar({
-        theme: "my-theme-2",
-    });
+    // $(".step-two__group").mCustomScrollbar({
+    //     theme: "my-theme-2",
+    // });
 
     // $(".step-three__list").mCustomScrollbar({
     //     theme: "my-theme-2",
