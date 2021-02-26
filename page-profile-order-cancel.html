@@ -334,94 +334,80 @@
         <div class="breadcrumbs__wrap">
             <ul class="breadcrumbs__list">
                 <li class="breadcrumbs__item"><a href="#">Главная</a></li>
-                <li class="breadcrumbs__item"><a href="#">Каталог</a></li>
-                <li class="breadcrumbs__item"><span>Подвесные системы</span></li>
+                <li class="breadcrumbs__item"><a href="#">Личный кабинет</a></li>
+                <li class="breadcrumbs__item"><span>Мои заказы</span></li>
             </ul>
         </div>
     </div>
 </section>
 
-<section class="navigation-page">
+<section class="profile">
     <div class="container">
-        <div class="navigation-page__column">
-            
-            <div class="navigation-page__list">
-                <div class="navigation-page__item">
-                    <h2 class="navigation-page__title title-h2">Страницы</h2>
-                    <a class="navigation-page__link" href="./index.html">Главная страница</a>
-                    <a class="navigation-page__link" href="./page-catalog.html">Страница каталога</a>
-                    <a class="navigation-page__link" href="./page-card-product.html">Карточка товара</a>
-                    <a class="navigation-page__link" href="./page-card-product-not-reviews.html">Карточка товара без отзывов</a>
-                    <a class="navigation-page__link" href="./page-basket.html">Корзина</a>
-                    <a class="navigation-page__link" href="./page-basket-not-pomocode.html">Корзина промокод отключен</a>
-                    <a class="navigation-page__link" href="./page-basket-add-promocode.html">Корзина промокод применен</a>
-                    <a class="navigation-page__link" href="./page-order.html">Оформление заказа</a>
-                    <a class="navigation-page__link" href="./page-profile-order.html">Мои заказы</a>
+        <div class="profile__title title-h1">Отмена заказа № 1125005</div>
+    </div>
 
-                    <a class="navigation-page__link" href="./page-profile-order-item-individual.html">Страница заказа физ. лица</a>
-                    <a class="navigation-page__link" href="./page-profile-order-item-legal.html">Страница заказа юр. лица</a>
-                    <a class="navigation-page__link" href="./page-profile-order-cancel.html">Отмена заказа</a>
+    <div class="profile__link profile-links">
+        <div class="container">
+            <div class="profile-links__list">
+                <div class="profile-links__item"><a class="profile-links__link current" href="#">Мои заказы</a></div>
+                <div class="profile-links__item"><a class="profile-links__link" href="#">Персональные данные</a></div>
+                <div class="profile-links__item"><a class="profile-links__link" href="#">Бонусная система</a></div>
+                <div class="profile-links__item"><a class="profile-links__link" href="#">Избранное</a></div>
+                <div class="profile-links__item"><a class="profile-links__link" href="#">Моя корзина</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile__order-item card-order">
+        <div class="container">
+            <div class="card-order__wrap">
+                <div class="card-order__back-lsit">
+                    <div class="card-order__back-lsit-button">
+                        <a href="#">Вернуться в список заказов</a>
+                    </div>
                 </div>
 
-                <div class="navigation-page__item">
-                    <h2 class="navigation-page__title title-h2">Формы</h2>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="sign-in">Вход</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="sign-up">Регистрация</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="recovery-pass">Восстановление пароля</a>
+                <div class="card-order__wrap-cancel card-order-cancel">
+                    <div class="card-order-cancel__text">Отмена заказа необратима.</div>
 
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-catalog">Получить каталог</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-order-req">Заявка на расчёт</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-recall">Заказать звонок</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-order-work">Монтажные работы</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-measurer">Выезд консультанта и замерщика</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-reviews">Отзыв о магазине</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-add-basket">Товар добавлен в корзину</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-oneclick">Заказ в один клик</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-install-work">Оставить заявку на заказ</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-reviews-product">Ваш отзыв о товаре</a>
-                </div>
-
-                <div class="navigation-page__item">
-                    <h2 class="navigation-page__title title-h2">Дополнительные страницы</h2>
-                    <a class="navigation-page__link" href="./page-info.html">Информационная страница</a>
-                    <a class="navigation-page__link" href="./page-news.html">Общая страница новостей</a>
-                    <a class="navigation-page__link" href="./page-reviews.html">Общая страница отзывов о магазине</a>
+                    <form action="#" class="card-order-cancel__form form-cancel">
+                        <div class="form-cancel__text">Укажите, пожалуйста, причину отмены заказа:</div>
+                        <div class="form-cancel__textarea">
+                            <textarea placeholder="Опишите причину"></textarea>
+                        </div>
+                        <input type="submit" value="Отменить заказ" class="form-cancel__submit main-btn">
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
 </section>
 
-<style>
-    .navigation-page {
-        padding: 5% 0;
-    }
+<section class="subscribe">
+    <div class="container">
+      <div class="subscribe__wrap">
+        <div class="subscribe__column">
+          <div class="subscribe__group">
+            <h2 class="subscribe__title title-h2">Будьте всегда в курсе!</h2>
+            <div class="subscribe__subtitle">Не пропускайте новости о наших акциях, скидках и событиях, подпишитесь и узнавайте о них первым</div>
+          </div>
+        </div>
 
-    .navigation-page__list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
-    }
-
-    .navigation-page__title {
-        margin-bottom: 50px;
-    }
-
-    .navigation-page__link {
-        display: block;
-        margin-bottom: 20px;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 25px;
-        color: #0079be;
-    }
-
-    @media (max-width: 768px) {
-    .navigation-page__list {
-        grid-template-columns: 1fr;
-    }
-    }
-</style>
+        <div class="subscribe__column">
+          <form action="#" class="subscribe__form from-sub">
+            <div class="from-sub__wrap">
+              <input class="from-sub__input" name="email" type="text" placeholder="Ваш e-mail">
+              <input class="from-sub__button main-btn" type="submit" value="Подписаться">
+            </div>
+          </form>
+          <div class="subscribe__sub">
+            Отправляя данные, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
 
 <!-- FOOTER -->
 

@@ -334,94 +334,371 @@
         <div class="breadcrumbs__wrap">
             <ul class="breadcrumbs__list">
                 <li class="breadcrumbs__item"><a href="#">Главная</a></li>
-                <li class="breadcrumbs__item"><a href="#">Каталог</a></li>
-                <li class="breadcrumbs__item"><span>Подвесные системы</span></li>
+                <li class="breadcrumbs__item"><a href="#">Личный кабинет</a></li>
+                <li class="breadcrumbs__item"><a href="#">Заказы</a></li>
+                <li class="breadcrumbs__item"><span>Информация о заказе №1125005</span></li>
             </ul>
         </div>
     </div>
 </section>
 
-<section class="navigation-page">
+<section class="profile">
     <div class="container">
-        <div class="navigation-page__column">
-            
-            <div class="navigation-page__list">
-                <div class="navigation-page__item">
-                    <h2 class="navigation-page__title title-h2">Страницы</h2>
-                    <a class="navigation-page__link" href="./index.html">Главная страница</a>
-                    <a class="navigation-page__link" href="./page-catalog.html">Страница каталога</a>
-                    <a class="navigation-page__link" href="./page-card-product.html">Карточка товара</a>
-                    <a class="navigation-page__link" href="./page-card-product-not-reviews.html">Карточка товара без отзывов</a>
-                    <a class="navigation-page__link" href="./page-basket.html">Корзина</a>
-                    <a class="navigation-page__link" href="./page-basket-not-pomocode.html">Корзина промокод отключен</a>
-                    <a class="navigation-page__link" href="./page-basket-add-promocode.html">Корзина промокод применен</a>
-                    <a class="navigation-page__link" href="./page-order.html">Оформление заказа</a>
-                    <a class="navigation-page__link" href="./page-profile-order.html">Мои заказы</a>
+        <div class="profile__title title-h1">Заказ № 1125005</div>
+    </div>
 
-                    <a class="navigation-page__link" href="./page-profile-order-item-individual.html">Страница заказа физ. лица</a>
-                    <a class="navigation-page__link" href="./page-profile-order-item-legal.html">Страница заказа юр. лица</a>
-                    <a class="navigation-page__link" href="./page-profile-order-cancel.html">Отмена заказа</a>
+    <div class="profile__link profile-links">
+        <div class="container">
+            <div class="profile-links__list">
+                <div class="profile-links__item"><a class="profile-links__link current" href="#">Мои заказы</a></div>
+                <div class="profile-links__item"><a class="profile-links__link" href="#">Персональные данные</a></div>
+                <div class="profile-links__item"><a class="profile-links__link" href="#">Бонусная система</a></div>
+                <div class="profile-links__item"><a class="profile-links__link" href="#">Избранное</a></div>
+                <div class="profile-links__item"><a class="profile-links__link" href="#">Моя корзина</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile__order-item card-order">
+        <div class="container">
+            <div class="card-order__wrap">
+                <div class="card-order__back-lsit">
+                    <div class="card-order__back-lsit-button">
+                        <a href="#">Вернуться в список заказов</a>
+                    </div>
                 </div>
 
-                <div class="navigation-page__item">
-                    <h2 class="navigation-page__title title-h2">Формы</h2>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="sign-in">Вход</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="sign-up">Регистрация</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="recovery-pass">Восстановление пароля</a>
+                <div class="card-order__item order-current">
+                    <div class="order-current__wrap">
+                        <div class="order-current__column">
+                            <div class="order-current__group">
+                                <div class="order-current__number">№ 1125005</div>
+                                <div class="order-current__status --new">Новый</div>
+                            </div>
 
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-catalog">Получить каталог</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-order-req">Заявка на расчёт</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-recall">Заказать звонок</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-order-work">Монтажные работы</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-measurer">Выезд консультанта и замерщика</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-reviews">Отзыв о магазине</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-add-basket">Товар добавлен в корзину</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-oneclick">Заказ в один клик</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-install-work">Оставить заявку на заказ</a>
-                    <a class="navigation-page__link js-modal-show" href="#" data-popup="popup-reviews-product">Ваш отзыв о товаре</a>
+                            <div class="order-current__group">
+                                <div class="order-current__cancel order-cancel">
+                                    <a href="#">Отменить заказ</a>
+                                    <div class="order-cancel__hint">
+                                        Отмена заказа возможна в течение 2х часов после оформления.
+                                    </div>
+                                </div>
+                                <div class="order-current__repeat order-repeat">
+                                    <a href="#">Повторить заказ</a>
+                                </div>
+                                <div class="order-current__watch">
+                                    <a href="#">Посмотреть заказ</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-current__column">
+                            <div class="order-current__name">Дата создания</div>
+                            <div class="order-current__text">01.10.2020</div>
+                        </div>
+
+                        <div class="order-current__column">
+                            <div class="order-current__name">Способ доставки</div>
+                            <div class="order-current__text">Доставка по Московской области</div>
+                            <div class="order-current__delivery-cost">Стоимость: <span>600 р.</span></div>
+                        </div>
+
+                        <div class="order-current__column">
+                            <div class="order-current__name">Способ оплаты</div>
+                            <div class="order-current__text">Наличный при получении</div>
+                        </div>
+
+                        <div class="order-current__column">
+                            <div class="order-current__name">Сумма</div>
+                            <div class="order-current__price">2 220 642 р.</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="navigation-page__item">
-                    <h2 class="navigation-page__title title-h2">Дополнительные страницы</h2>
-                    <a class="navigation-page__link" href="./page-info.html">Информационная страница</a>
-                    <a class="navigation-page__link" href="./page-news.html">Общая страница новостей</a>
-                    <a class="navigation-page__link" href="./page-reviews.html">Общая страница отзывов о магазине</a>
+                <div class="card-order__info info-card-order">
+                    <div class="info-card-order__title">Заказ: <span>№ 1125005</span> от <span>01.10.20</span> на сумму <span>2 642 р.</span></div>
+                    <div class="info-card-order__wrap">
+                        <div class="info-card-order__name">Информация о покупателе</div>
+                        <div class="info-card-order__list">
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">Тип плательщика:</span> 
+                                <span class="info-card-order__item-value">Юридическое лицо</span>
+                            </div>
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">Название компании:</span> 
+                                <span class="info-card-order__item-value">ООО Галерея</span>
+                            </div>
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">Форма организации:</span> 
+                                <span class="info-card-order__item-value">ООО</span>
+                            </div>
+
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">Юридический адрес:</span> 
+                                <span class="info-card-order__item-value">Москва, Гостиничный проезд, 4б, кв 22</span>
+                            </div>
+                            
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">ИНН:</span> 
+                                <span class="info-card-order__item-value">11121111111</span>
+                            </div>
+
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">КПП:</span> 
+                                <span class="info-card-order__item-value">11121111111</span>
+                            </div>
+
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">БИК:</span> 
+                                <span class="info-card-order__item-value">11121111111</span>
+                            </div>
+
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">Банк:</span> 
+                                <span class="info-card-order__item-value">Альфабанк</span>
+                            </div>
+
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">Корр. счет:</span> 
+                                <span class="info-card-order__item-value">11121111111</span>
+                            </div>
+
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">Расчетный счет:</span> 
+                                <span class="info-card-order__item-value">11121111111</span>
+                            </div>
+
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">ФИО:</span> 
+                                <span class="info-card-order__item-value">Иван Иванович Иванов</span>
+                            </div>
+                            <div class="info-card-order__item --phone">
+                                <span class="info-card-order__item-name">Телефон:</span> 
+                                <span class="info-card-order__item-value"><a href="tel:+70000000000">+7 (000) 000-00-00</a></span>
+                            </div>
+                            <div class="info-card-order__item --email">
+                                <span class="info-card-order__item-name">E-mail:</span> 
+                                <span class="info-card-order__item-value"><a href="mailto:1112@gmail.com">1112@gmail.com</a></span>
+                            </div>
+                            <div class="info-card-order__item">
+                                <span class="info-card-order__item-name">Адрес доставки:</span> 
+                                <span class="info-card-order__item-value">Москва, Гостиничный проезд, 4б, кв 22</span>
+                            </div>
+                            <div class="info-card-order__item --comment">
+                                <span class="info-card-order__item-name">Комментарий к заказу:</span> 
+                                <span class="info-card-order__item-value">Здесь будет отражаться комментарий к заказу,  оставленный покупателем</span>
+                            </div>
+                        </div>
+                        <div class="info-card-order__name --blue">Дополнительные услуги</div>
+                        <div class="info-card-order__list-service">
+                            <div class="info-card-order__item-service">Монтажные работы,</div>
+                            <div class="info-card-order__item-service">Развесовка лесок и крючков,</div>
+                            <div class="info-card-order__item-service">Покраска профиля,</div>
+                            <div class="info-card-order__item-service">Консультация дизайнера</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-order__list-product list-card-order">
+                    <div class="list-card-order__caption">
+                        <div class="list-card-order__name">Содержимое заказа</div>
+                        <div class="list-card-order__name">Цена за ед.</div>
+                        <div class="list-card-order__name">Количество</div>
+                        <div class="list-card-order__name">Скидка</div>
+                        <div class="list-card-order__name">Стоимость</div>
+                    </div>
+
+                    <div class="list-card-order__list">
+                        <div class="list-card-order__item item-product-basket">
+                            <div class="item-product-basket__group">
+                                <a href="" class="item-product-basket__image"><img src="./img/image-basket-product-1.png" alt=""></a>
+                                <div class="item-product-basket__group-info">
+                                    <a href="" class="item-product-basket__name">Настенная подвесная система «Рельс клик»</a>
+                                    <div class="item-product-basket__article article">Артикул: <span>1111</span></div>
+                                    <div class="item-product-basket__parameters">
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Длина, см:</span>
+                                            <span>200;</span>
+                                        </div>
+    
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Тип:</span>
+                                            <span>Для рельса «Деко»;</span>
+                                        </div>
+    
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Материал:</span>
+                                            <span>Сталь;</span>
+                                        </div>
+    
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Цвет:</span>
+                                            <span>Белый</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="item-product-basket__price-one price-product" data-name="Цена за ед.">
+                                <div class="price-product__old-price"><span>10 000</span> р.</div>
+                                <div class="price-product__current-price"><span>2 000</span> р.</div>
+                            </div>
+    
+                            <div class="item-product-basket__quantity" data-name="Количество">
+                                <div class="item-product-basket__quantity-value"><span>2</span></div>
+                            </div>
+
+                            <div class="item-product-basket__discount price-product" data-name="Скидка">
+                                <div class="price-product__current-price"><span>500</span></div>
+                            </div>
+    
+                            <div class="item-product-basket__price-all price-product" data-name="Стоимость">
+                                <div class="price-product__current-price"><span>2 000</span> р.</div>
+                            </div>
+                        </div>
+
+                        <div class="list-card-order__item item-product-basket">
+                            <div class="item-product-basket__group">
+                                <a href="" class="item-product-basket__image"><img src="./img/image-basket-product-1.png" alt=""></a>
+                                <div class="item-product-basket__group-info">
+                                    <a href="" class="item-product-basket__name">Настенная подвесная система «Рельс клик»</a>
+                                    <div class="item-product-basket__article article">Артикул: <span>1111</span></div>
+                                    <div class="item-product-basket__parameters">
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Длина, см:</span>
+                                            <span>200;</span>
+                                        </div>
+    
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Тип:</span>
+                                            <span>Для рельса «Деко»;</span>
+                                        </div>
+    
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Материал:</span>
+                                            <span>Сталь;</span>
+                                        </div>
+    
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Цвет:</span>
+                                            <span>Белый</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="item-product-basket__price-one price-product" data-name="Цена за ед.">
+                                <div class="price-product__old-price"><span>10 000</span> р.</div>
+                                <div class="price-product__current-price"><span>2 000</span> р.</div>
+                            </div>
+    
+                            <div class="item-product-basket__quantity" data-name="Количество">
+                                <div class="item-product-basket__quantity-value"><span>2</span></div>
+                            </div>
+
+                            <div class="item-product-basket__discount price-product" data-name="Скидка">
+                                <div class="price-product__current-price"><span>500</span></div>
+                            </div>
+    
+                            <div class="item-product-basket__price-all price-product" data-name="Стоимость">
+                                <div class="price-product__current-price"><span>2 000</span> р.</div>
+                            </div>
+                        </div>
+
+                        <div class="list-card-order__item item-product-basket">
+                            <div class="item-product-basket__group">
+                                <a href="" class="item-product-basket__image"><img src="./img/image-basket-product-1.png" alt=""></a>
+                                <div class="item-product-basket__group-info">
+                                    <a href="" class="item-product-basket__name">Настенная подвесная система «Рельс клик»</a>
+                                    <div class="item-product-basket__article article">Артикул: <span>1111</span></div>
+                                    <div class="item-product-basket__parameters">
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Длина, см:</span>
+                                            <span>200;</span>
+                                        </div>
+    
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Тип:</span>
+                                            <span>Для рельса «Деко»;</span>
+                                        </div>
+    
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Материал:</span>
+                                            <span>Сталь;</span>
+                                        </div>
+    
+                                        <div class="item-product-basket__parameters-item">
+                                            <span>Цвет:</span>
+                                            <span>Белый</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="item-product-basket__price-one price-product" data-name="Цена за ед.">
+                                <div class="price-product__old-price"><span>10 000</span> р.</div>
+                                <div class="price-product__current-price"><span>2 000</span> р.</div>
+                            </div>
+    
+                            <div class="item-product-basket__quantity" data-name="Количество">
+                                <div class="item-product-basket__quantity-value"><span>2</span></div>
+                            </div>
+
+                            <div class="item-product-basket__discount price-product" data-name="Скидка">
+                                <div class="price-product__current-price"><span>500</span></div>
+                            </div>
+    
+                            <div class="item-product-basket__price-all price-product" data-name="Стоимость">
+                                <div class="price-product__current-price"><span>2 000</span> р.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-order__back-lsit">
+                    <div class="card-order__back-lsit-button">
+                        <a href="#">Вернуться в список заказов</a>
+                    </div>
+                    <div class="order-current__cancel order-cancel">
+                        <a href="#">Отменить заказ</a>
+                        <div class="order-cancel__hint">
+                            Отмена заказа возможна в течение 2х часов после оформления.
+                        </div>
+                    </div>
+                    <div class="order-current__repeat order-repeat">
+                        <a href="#">Повторить заказ</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </section>
 
-<style>
-    .navigation-page {
-        padding: 5% 0;
-    }
+<section class="subscribe">
+    <div class="container">
+      <div class="subscribe__wrap">
+        <div class="subscribe__column">
+          <div class="subscribe__group">
+            <h2 class="subscribe__title title-h2">Будьте всегда в курсе!</h2>
+            <div class="subscribe__subtitle">Не пропускайте новости о наших акциях, скидках и событиях, подпишитесь и узнавайте о них первым</div>
+          </div>
+        </div>
 
-    .navigation-page__list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
-    }
-
-    .navigation-page__title {
-        margin-bottom: 50px;
-    }
-
-    .navigation-page__link {
-        display: block;
-        margin-bottom: 20px;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 25px;
-        color: #0079be;
-    }
-
-    @media (max-width: 768px) {
-    .navigation-page__list {
-        grid-template-columns: 1fr;
-    }
-    }
-</style>
+        <div class="subscribe__column">
+          <form action="#" class="subscribe__form from-sub">
+            <div class="from-sub__wrap">
+              <input class="from-sub__input" name="email" type="text" placeholder="Ваш e-mail">
+              <input class="from-sub__button main-btn" type="submit" value="Подписаться">
+            </div>
+          </form>
+          <div class="subscribe__sub">
+            Отправляя данные, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
 
 <!-- FOOTER -->
 
