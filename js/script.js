@@ -824,6 +824,21 @@ if (popupConfigurator !== null) {
 
 }
 
+//Табы профиля
+let tabsButton = Array.prototype.slice.call(document.querySelectorAll(".profile-tabs__button"));
+let tabsItem = Array.prototype.slice.call(document.querySelectorAll(".profile-tabs__item"));
+
+if (tabsButton != null) {
+    tabsButton.forEach(element => {
+        element.addEventListener("click", () => {
+            tabsButton.forEach(el => el.classList.remove("current"));
+            tabsItem.forEach(el => el.classList.remove("current"));
+            element.classList.add("current");
+            document.querySelector(`#${element.dataset.item}`).classList.add("current");
+        })
+    });
+}
+
 $(document).ready(function () {
 
     // Меню каталога
