@@ -104,7 +104,7 @@
               </ul>
             </div>
 
-            <div class="header-bottom__row">
+            <div class="header-bottom__row --search">
               <form action="#" class="header-bottom__search">
                 <input class="header-bottom__search-input" type="text" name="search" placeholder="Поиск товаров">
                 <button class="header-bottom__search-button" type="submit">
@@ -114,20 +114,20 @@
                 </button>
                   <div class="header-bottom__search-results">
                       <div class="header-bottom__search-results-wrap">
-                        <div class="header-bottom__search-results-item">
+                        <a href="#" class="header-bottom__search-results-item">
                           <div class="header-bottom__search-results-name"><span>Настенная система</span> <span>«Рельс Крик»</span></div>
                           <div class="header-bottom__search-results-price"><span>720</span> р.</div>
-                        </div>
+                        </a>
 
-                        <div class="header-bottom__search-results-item">
+                        <a href="#" class="header-bottom__search-results-item">
                           <div class="header-bottom__search-results-name"><span>Настенная система</span> <span>«Рельс Крик»</span></div>
                           <div class="header-bottom__search-results-price"><span>720</span> р.</div>
-                        </div>
+                        </a>
 
-                        <div class="header-bottom__search-results-item">
+                        <a href="#" class="header-bottom__search-results-item">
                           <div class="header-bottom__search-results-name"><span>Настенная система</span> <span>«Рельс Крик»</span></div>
                           <div class="header-bottom__search-results-price"><span>720</span> р.</div>
-                        </div>
+                        </a>
                       </div>
                       <a href="#" class="header-bottom__search-results-all">Показать все результаты</a>
                   </div>
@@ -1548,12 +1548,12 @@
         </div>
 
         <div class="popup-sign-up__wrap-input">
-            <input class="popup-sign-up__input" type="tel" placeholder="Ваш телефон *">
+            <input class="popup-sign-up__input" type="text" placeholder="Ваш E-mail *">
         </div>
 
         <div class="popup-sign-up__wrap-input">
-            <input class="popup-sign-up__input" type="text" placeholder="Ваш E-mail *">
-        </div>
+          <input class="popup-sign-up__input" type="text" placeholder="Пароль*">
+      </div>
 
         <div class="popup-sign-up__group-input --select">
           <div class="popup-sign-up__wrap-input js-from-wrap-input --legal">
@@ -1880,31 +1880,36 @@
         <div class="popup-reviews-product__text">Оценка</div>
         <div class="popup-reviews-product__rating rating">
           <div class="rating__wrap">
-              <div class="rating__item">
+              <label class="rating__item added">
+                  <input type="radio" name="rating" checked>
                   <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-              </div>
-              <div class="rating__item">
+              </label>
+              <label class="rating__item added">
+                  <input type="radio" name="rating">
                   <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-              </div>
-              <div class="rating__item">
+              </label>
+              <label class="rating__item added">
+                  <input type="radio" name="rating">
                   <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-              </div>
-              <div class="rating__item">
+              </label>
+              <label class="rating__item added">
+                  <input type="radio" name="rating">
                   <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-              </div>
-              <div class="rating__item">
+              </label>
+              <label class="rating__item added">
+                  <input type="radio" name="rating">
                   <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M6.50046 9.40904L2.86499 11.1929L3.5593 7.41462L0.618146 4.73883L4.68272 4.18759L6.50046 0.75L8.31819 4.18759L12.3828 4.73883L9.44161 7.41462L10.1359 11.1929L6.50046 9.40904Z" stroke="#0079BE" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-              </div>
+              </label>
           </div>
       </div>
       </div>

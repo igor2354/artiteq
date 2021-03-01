@@ -282,72 +282,96 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ограничение текста новостей
     let arrNews = Array.prototype.slice.call(document.querySelectorAll(".card-news__text"));
 
-    arrNews.forEach((element, i) => {
-        if (element.textContent.length > 280) {
-            element.textContent = element.textContent.substring(0, 270) + "...";
-        }
-    });
+    if (arrNews != null) {
+        arrNews.forEach((element, i) => {
+            if (element.textContent.length > 280) {
+                element.textContent = element.textContent.substring(0, 270) + "...";
+            }
+        });
+    }
 
     // Бургер
     let ham = document.querySelector(".js-ham");
-    ham.addEventListener("click", function () {
-        this.classList.toggle("active");
-    })
+
+    if (ham != null) {
+        ham.addEventListener("click", function () {
+            this.classList.toggle("active");
+        })
+    }
 
     // Перенос элементов в мобильное меню
     let mobMenu = document.querySelector(".dl-menu");
     let arrMobMenuItem = Array.prototype.slice.call(document.querySelectorAll(".js-mob-menu"));
     let arrMobMenuElement = Array.prototype.slice.call(document.querySelectorAll(".js-mob-menu-el"));
 
-    arrMobMenuItem.forEach(element => {
-        let elClone = element.cloneNode(true);
+    if (arrMobMenuItem != null) {
+        arrMobMenuItem.forEach(element => {
+            let elClone = element.cloneNode(true);
 
-        let link = Array.prototype.slice.call(elClone.querySelectorAll("a"));
+            let link = Array.prototype.slice.call(elClone.querySelectorAll("a"));
 
-        link.forEach(element => {
-            if (element.classList.contains("animate-link")) {
-                element.classList.remove("animate-link");
-            }
-        });
-
-        if (elClone.querySelectorAll("ul") != null) {
-
-            elClone.querySelectorAll("ul").forEach(element => {
-                element.classList.add("dl-submenu");
+            link.forEach(element => {
+                if (element.classList.contains("animate-link")) {
+                    element.classList.remove("animate-link");
+                }
             });
-        }
 
-        mobMenu.append(elClone);
+            if (elClone.querySelectorAll("ul") != null) {
 
-    });
-
-    arrMobMenuElement.forEach(element => {
-        let elClone = element.cloneNode(true);
-
-        let link = Array.prototype.slice.call(elClone.querySelectorAll("a"));
-
-        link.forEach(element => {
-            if (element.classList.contains("animate-link")) {
-                element.classList.remove("animate-link");
+                elClone.querySelectorAll("ul").forEach(element => {
+                    element.classList.add("dl-submenu");
+                });
             }
-        });
 
-        let wrap = document.createElement("li");
-        wrap.classList.add("one-level");
-        wrap.append(elClone);
-        mobMenu.prepend(wrap);
-    })
+            mobMenu.append(elClone);
+
+        });
+    }
+
+    if (arrMobMenuElement != null) {
+        arrMobMenuElement.forEach(element => {
+            let elClone = element.cloneNode(true);
+
+            let link = Array.prototype.slice.call(elClone.querySelectorAll("a"));
+
+            link.forEach(element => {
+                if (element.classList.contains("animate-link")) {
+                    element.classList.remove("animate-link");
+                }
+            });
+
+            let wrap = document.createElement("li");
+            wrap.classList.add("one-level");
+            wrap.append(elClone);
+            mobMenu.prepend(wrap);
+        })
+    }
 
     let mobBasket = document.querySelector(".mob-menu__basket-wrap");
-    mobBasket.append(document.querySelector(".fav").cloneNode(true));
-    mobBasket.append(document.querySelector(".basket").cloneNode(true));
+    if (mobBasket != null) {
+        mobBasket.append(document.querySelector(".fav").cloneNode(true));
+        mobBasket.append(document.querySelector(".basket").cloneNode(true));
+    }
 
     let mobLogo = document.querySelector(".mob-menu__logo");
-    mobLogo.append(document.querySelector(".logo-header").childNodes[0].cloneNode(true));
+    if (mobLogo != null) {
+        mobLogo.append(document.querySelector(".logo-header img").cloneNode(true));
+    }
 
-    let search = document.querySelector(".mob-menu__search");
+    let search = document.querySelector(".header-bottom__search");
 
-    document.querySelector(".catalog-menu__wrapper").insertBefore(document.querySelector(".header-bottom__search").cloneNode(true), document.querySelector(".catalog-menu__group"))
+    if (search != null) {
+        function moveSearch() {
+            if (match[0].matches) {
+                document.querySelector(".catalog-menu__wrapper").insertBefore(search, document.querySelector(".catalog-menu__group"));
+            } else {
+                document.querySelector(".header-bottom__row.--search").append(search);
+            }
+        }
+
+        match[0].addListener(moveSearch);
+        moveSearch();
+    };
 
     // Открытие попапов
     let popupAllElem = Array.prototype.slice.call(document.querySelectorAll(".modal"));
@@ -399,117 +423,130 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    openButton.forEach(element => {
-        element.addEventListener("click", (e) => {
-            closePopup(e);
+    if (openButton != null) {
+        openButton.forEach(element => {
+            element.addEventListener("click", (e) => {
+                closePopup(e);
 
-            openPopup(e);
+                openPopup(e);
+            })
         })
-    })
+    }
 
-    closeButton.forEach(element => {
-        element.addEventListener("click", (e) => {
+    if (closeButton != null) {
+        closeButton.forEach(element => {
+            element.addEventListener("click", (e) => {
+                closePopup();
+            });
+        });
+    }
+
+    if (popupOverlay != null) {
+        popupOverlay.addEventListener("click", () => {
             closePopup();
         });
-    });
-
-    popupOverlay.addEventListener("click", () => {
-        closePopup();
-    });
+    }
 
 
     // Показать скрыть пароль
-    let elViewPass = document.querySelector(".icon-view-password");
+    let elViewPass = document.querySelectorAll(".icon-view-password");
 
-    elViewPass.addEventListener("click", (e) => {
-        let inputPassword = e.target.parentNode.querySelector("input");
+    if (elViewPass != null) {
+        elViewPass.forEach(element => {
+            element.addEventListener("click", (e) => {
+                let inputPassword = e.target.parentNode.querySelector("input");
 
-        if (inputPassword.getAttribute("type") == "text") {
-            inputPassword.setAttribute("type", "password");
-        } else {
-            inputPassword.setAttribute("type", "text");
-        }
-    })
+                if (inputPassword.getAttribute("type") == "text") {
+                    inputPassword.setAttribute("type", "password");
+                } else {
+                    inputPassword.setAttribute("type", "text");
+                }
+            })
+        });
+    }
 
     // Сортирока поддоменов
 
     let itemDomain = Array.prototype.slice.call(document.querySelectorAll(".popup-domain__item"));
 
-    itemDomain.sort(function (a, b) {
-        // сортируем от а до я
-        if (a.querySelector("a").textContent[0] < b.querySelector("a").textContent[0]) return -1;
-        if (a.querySelector("a").textContent[0] > b.querySelector("a").textContent[0]) return 1;
-        return 0;
-    })
+    if (itemDomain != null) {
+        itemDomain.sort(function (a, b) {
+            // сортируем от а до я
+            if (a.querySelector("a").textContent[0] < b.querySelector("a").textContent[0]) return -1;
+            if (a.querySelector("a").textContent[0] > b.querySelector("a").textContent[0]) return 1;
+            return 0;
+        })
 
-    itemDomain.forEach((el, index, array) => {
-        // берем перую букву
-        let wordFirst = el.querySelector("a").textContent[0];
+        itemDomain.forEach((el, index, array) => {
+            // берем перую букву
+            let wordFirst = el.querySelector("a").textContent[0];
 
-        // берем следующий элемент после текущего
-        let elemInsert = array[index + 1] ? array[index + 1].querySelector("a").textContent[0] : null;
+            // берем следующий элемент после текущего
+            let elemInsert = array[index + 1] ? array[index + 1].querySelector("a").textContent[0] : null;
 
-        // создаем обертку для буквы
-        let wordAppend = document.createElement("span");
+            // создаем обертку для буквы
+            let wordAppend = document.createElement("span");
 
-        wordAppend.classList.add("first-word");
+            wordAppend.classList.add("first-word");
 
-        // первому элементу сразу вставляем букву
-        if (index == 0) {
-            wordAppend.textContent = wordFirst;
-            el.prepend(wordAppend);
-        }
+            // первому элементу сразу вставляем букву
+            if (index == 0) {
+                wordAppend.textContent = wordFirst;
+                el.prepend(wordAppend);
+            }
 
-        // проверяем отличаются ли первые буквы текущего и следующего элемента
-        if (wordFirst != elemInsert) {
-            wordAppend.textContent = elemInsert;
+            // проверяем отличаются ли первые буквы текущего и следующего элемента
+            if (wordFirst != elemInsert) {
+                wordAppend.textContent = elemInsert;
 
-            array[index + 1] ? array[index + 1].prepend(wordAppend) : null;
-        }
+                array[index + 1] ? array[index + 1].prepend(wordAppend) : null;
+            }
 
-        // вставляем букву слдеующему элементу за текущим
-        el.parentNode.append(el);
+            // вставляем букву слдеующему элементу за текущим
+            el.parentNode.append(el);
 
-    });
+        });
 
-    function moveFirstWordMobil() {
-        if (match[0].matches) {
-            itemDomain.forEach(element => {
-                element.querySelector("span") ? element.parentNode.insertBefore(element.querySelector("span"), element) : null;
-            })
-        } else {
-            if (itemDomain[0].parentNode.querySelector(".first-word").parentNode == itemDomain[0].parentNode) {
-
-                let arrSpan = Array.prototype.slice.call(itemDomain[0].parentNode.querySelectorAll(".first-word"));
-
-                arrSpan.forEach(element => {
-                    element.nextSibling.append(element);
+        function moveFirstWordMobil() {
+            if (match[0].matches) {
+                itemDomain.forEach(element => {
+                    element.querySelector("span") ? element.parentNode.insertBefore(element.querySelector("span"), element) : null;
                 })
+            } else {
+                if (itemDomain[0].parentNode.querySelector(".first-word").parentNode == itemDomain[0].parentNode) {
+
+                    let arrSpan = Array.prototype.slice.call(itemDomain[0].parentNode.querySelectorAll(".first-word"));
+
+                    arrSpan.forEach(element => {
+                        element.nextSibling.append(element);
+                    })
+                }
             }
         }
+
+        match[0].addListener(moveFirstWordMobil);
+        moveFirstWordMobil();
     }
-
-    match[0].addListener(moveFirstWordMobil);
-    moveFirstWordMobil();
-
 
     //Анимация иконок 
     let arrAnimIcon = Array.prototype.slice.call(document.querySelectorAll(".element-anim"));
 
-    arrAnimIcon.forEach(element => {
-        let activeAnim = true;
-        element.addEventListener("mouseenter", () => {
-            if (activeAnim == true) {
-                Array.prototype.slice.call(element.querySelectorAll(".anim-item")).forEach(el => {
-                    el.beginElement();
-                })
-                activeAnim = false;
-                setTimeout(() => {
-                    activeAnim = true;
-                }, element.getAttribute("data-anim-time"))
-            }
-        })
-    });
+    if (arrAnimIcon != null) {
+        arrAnimIcon.forEach(element => {
+            let activeAnim = true;
+            element.addEventListener("mouseenter", () => {
+                if (activeAnim == true) {
+                    Array.prototype.slice.call(element.querySelectorAll(".anim-item")).forEach(el => {
+                        el.beginElement();
+                    })
+                    activeAnim = false;
+                    setTimeout(() => {
+                        activeAnim = true;
+                    }, element.getAttribute("data-anim-time"))
+                }
+            })
+        });
+    };
 
     // Количество товаров
     //===========================================МОЖНО УДАЛИТЬ==================================================================
@@ -590,21 +627,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Плавный якорь
 
-    const anchors = document.querySelectorAll('a[href*="#"].--js-anchor-link')
+    const anchors = document.querySelectorAll('a[href*="#"].--js-anchor-link');
 
-    for (let anchor of anchors) {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault()
+    if (anchors != null) {
+        for (let anchor of anchors) {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault()
 
-            const blockID = anchor.getAttribute('href').substr(1)
+                const blockID = anchor.getAttribute('href').substr(1)
 
-            document.getElementById(blockID).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                document.getElementById(blockID).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                })
             })
-        })
+        }
     }
-
 
     // Position sticky на js
     let stickyEl;
@@ -623,14 +661,15 @@ document.addEventListener('DOMContentLoaded', function () {
     let buttonViewAllRev = document.querySelector(".product-reviews__button-all");
     let arrReviewsItem = Array.prototype.slice.call(document.querySelectorAll(".product-reviews__item"));
 
-    arrReviewsItem.forEach((el, index) => {
-        if (index > 4) {
-            el.style.height = "0px";
-            el.classList.add("--hidden");
-        }
-        stickyEl.hardRefresh();
-    });
-
+    if (arrReviewsItem != null) {
+        arrReviewsItem.forEach((el, index) => {
+            if (index > 4) {
+                el.style.height = "0px";
+                el.classList.add("--hidden");
+            }
+            stickyEl.hardRefresh();
+        });
+    };
 
     if (buttonViewAllRev != null) {
         buttonViewAllRev.addEventListener("click", (e) => {
@@ -659,42 +698,62 @@ document.addEventListener('DOMContentLoaded', function () {
     // Переключение форм юр лица и физ лица
     let triggers = Array.prototype.slice.call(document.querySelectorAll(".js-trigger-legal"));
 
-    triggers.forEach(el => {
-        el.onchange = () => {
-            let arrInputLegal = Array.prototype.slice.call(el.parentNode.parentNode.querySelectorAll(".js-from-wrap-input.--legal"));
+    if (triggers != null) {
+        triggers.forEach(el => {
+            el.onchange = () => {
+                let arrInputLegal = Array.prototype.slice.call(el.parentNode.parentNode.querySelectorAll(".js-from-wrap-input.--legal"));
+                let arrIndividual = Array.prototype.slice.call(el.parentNode.parentNode.querySelectorAll(".js-from-wrap-input.--individual"));
 
-            if (el.classList.contains("--legal") && el.querySelector("input").checked) {
-                arrInputLegal.forEach(element => {
-                    element.style.display = "block";
-                });
-            } else {
-                arrInputLegal.forEach(element => {
-                    element.style.display = "none";
-                });
+                if (el.classList.contains("--legal") && el.querySelector("input").checked) {
+                    arrInputLegal.forEach(element => {
+                        element.style.display = "block";
+                    });
+
+                    if (arrIndividual != null) {
+                        arrIndividual.forEach(element => {
+                            element.style.display = "none";
+                        });
+                    }
+                } else {
+                    arrInputLegal.forEach(element => {
+                        element.style.display = "none";
+                    });
+
+                    if (arrIndividual != null) {
+                        arrIndividual.forEach(element => {
+                            element.style.display = "block";
+                        });
+                    }
+                }
             }
-        }
-    });
+        });
+    }
+
     //============================================================================================================
 
     //==Рейтинг
     let arrRatingEl = Array.prototype.slice.call(document.querySelector(".popup-reviews-product__rating").querySelectorAll(".rating__item "));
 
-    arrRatingEl.forEach((el, index, array) => {
-        el.addEventListener("click", () => {
-            array.forEach(element => element.classList.remove("added"));
-            for (let i = index; i <= 4; i++) {
-                array[i].classList.add("added");
-            }
+    if (arrRatingEl != null) {
+        arrRatingEl.forEach((el, index, array) => {
+            el.addEventListener("click", () => {
+                array.forEach(element => element.classList.remove("added"));
+                for (let i = index; i <= 4; i++) {
+                    array[i].classList.add("added");
+                }
+            });
         });
-    });
+    }
 
     //== Закрыть куки
+    let cookies = document.querySelector(".js-cookies-close");
 
-    document.querySelector(".js-cookies-close").addEventListener("click", (e) => {
-        e.preventDefault();
-        document.querySelector(".popup-cookies").style.display = "none";
-    })
-
+    if (cookies != null) {
+        cookies.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector(".popup-cookies").style.display = "none";
+        });
+    };
 }, false);
 
 //== Конфигуратор
@@ -888,26 +947,6 @@ $(document).ready(function () {
     $(".popup-domain__list").mCustomScrollbar({
         theme: "my-theme",
     });
-
-    // $(".step-two__group").mCustomScrollbar({
-    //     theme: "my-theme-2",
-    // });
-
-    // $(".step-three__list").mCustomScrollbar({
-    //     theme: "my-theme-2",
-    // });
-
-    // $(".step-basket__list").mCustomScrollbar({
-    //     theme: "my-theme-2",
-    // });
-
-    // $(".step-six__group").mCustomScrollbar({
-    //     theme: "my-theme-2",
-    // });
-
-    // $(".popup-configurator").mCustomScrollbar({
-    //     theme: "my-theme-2",
-    // });
 
     $(".popup-configurator__wrap-scroll").mCustomScrollbar({
         theme: "my-theme-2",

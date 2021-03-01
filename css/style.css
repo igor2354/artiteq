@@ -496,6 +496,7 @@ input[type="number"] {
       border-radius: 2px;
       z-index: 1000; }
       .header-bottom__search-results-item {
+        display: block;
         padding: 10px 0;
         border-bottom: 1px solid rgba(51, 51, 51, 0.1); }
       .header-bottom__search-results-name {
@@ -2255,6 +2256,7 @@ input[type="number"] {
     .popup-sign-up__radio:last-child .popup-sign-up__radio-text {
       border-radius: 0px 2px 2px 0px; }
   .popup-sign-up__radio-text {
+    cursor: pointer;
     display: block;
     padding: 15px;
     text-align: center;
@@ -2392,11 +2394,14 @@ input[type="number"] {
           -ms-flex-direction: row-reverse;
               flex-direction: row-reverse; }
     .popup-reviews-product__rating-wrap .rating__item {
+      display: block;
       position: relative; }
       .popup-reviews-product__rating-wrap .rating__item svg {
         cursor: pointer;
         width: 27px;
         height: 27px; }
+      .popup-reviews-product__rating-wrap .rating__item input {
+        display: none; }
     .popup-reviews-product__rating-wrap .rating__wrap > .rating__item:hover svg,
     .popup-reviews-product__rating-wrap .rating__wrap > .rating__item:hover ~ .rating__item svg {
       fill: #0079be; }
@@ -7848,13 +7853,128 @@ input[type="number"] {
   .profile-tabs__item.current {
     display: block; }
 
+.user-profile__wrap {
+  padding: 2.8% 0 5.5% 0; }
+
+.form-user-profile__wrap-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 60px; }
+
+.form-user-profile__radio {
+  max-width: 250px;
+  width: 100%;
+  text-align: center;
+  margin-right: -1px; }
+  .form-user-profile__radio input {
+    display: none; }
+  .form-user-profile__radio input:checked + .form-user-profile__text {
+    color: #fff;
+    background: #0079be; }
+
+.form-user-profile__text {
+  cursor: pointer;
+  padding: 15px;
+  border: 1px solid rgba(0, 121, 190, 0.25);
+  border-radius: 0px 2px 2px 0px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  color: #0079be; }
+
+.form-user-profile__personal-data {
+  margin-bottom: 60px; }
+
+.form-user-profile__company-data {
+  margin-bottom: 60px; }
+  .form-user-profile__company-data.--legal {
+    display: none; }
+
+.form-user-profile__contact-info {
+  margin-bottom: 60px; }
+  .form-user-profile__contact-info.--legal {
+    display: none; }
+
+.form-user-profile__title {
+  margin-bottom: 45px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  color: #0079be; }
+
+.form-user-profile__wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px; }
+
+.form-user-profile__input-text {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px; }
+
+.form-user-profile__wrap-input input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d1d1d1; }
+  .form-user-profile__wrap-input input::-webkit-input-placeholder {
+    color: #929292; }
+  .form-user-profile__wrap-input input::-moz-placeholder {
+    color: #929292; }
+  .form-user-profile__wrap-input input:-ms-input-placeholder {
+    color: #929292; }
+  .form-user-profile__wrap-input input::-ms-input-placeholder {
+    color: #929292; }
+  .form-user-profile__wrap-input input::placeholder {
+    color: #929292; }
+
+.form-user-profile__password .form-user-profile__wrap-input {
+  position: relative; }
+
+.form-user-profile__icon-view-password {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 17px;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%); }
+  .form-user-profile__icon-view-password:hover {
+    -webkit-filter: brightness(0);
+            filter: brightness(0); }
+
+.form-user-profile__button {
+  margin-top: 35px; }
+  .form-user-profile__button input {
+    cursor: pointer;
+    max-width: 230px;
+    width: 100%; }
+
+.form-user-profile__subtext {
+  margin-top: 20px;
+  max-width: 750px;
+  font-size: 11px;
+  line-height: 20px;
+  color: #999999; }
+
 @media (max-width: 1170px) {
   .profile-links__link {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1150)); } }
+    font-size: calc(12px + 6 * ((100vw - 320px) / 1150)); }
+  .form-user-profile__title {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 1150)); }
+  .form-user-profile__input-text {
+    font-size: calc(14px + 2 * ((100vw - 320px) / 1150)); } }
 
 @media (max-width: 992px) {
   .profile-links__list {
-    grid-template-columns: repeat(3, auto); } }
+    grid-template-columns: repeat(3, auto); }
+  .form-user-profile__wrap {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px; } }
 
 @media (max-width: 768px) {
   .profile-tabs__control {
@@ -7864,13 +7984,45 @@ input[type="number"] {
             flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; } }
+            align-items: center; }
+  .form-user-profile__wrap {
+    grid-template-columns: 1fr; }
+  .form-user-profile__wrap-radio {
+    margin-bottom: 25px; }
+  .form-user-profile__personal-data {
+    margin-bottom: 25px; }
+  .form-user-profile__company-data {
+    margin-bottom: 25px; }
+  .form-user-profile__contact-info {
+    margin-bottom: 25px; }
+  .form-user-profile__title {
+    margin-bottom: 20px; } }
 
 @media (max-width: 500px) {
   .profile-links__list {
     padding: 15px 0;
     grid-template-columns: repeat(2, auto);
-    grid-row-gap: 10px; } }
+    grid-row-gap: 10px; }
+  .form-user-profile__wrap {
+    grid-gap: 10px; }
+  .form-user-profile__wrap-radio {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .form-user-profile__radio:first-child {
+    margin-bottom: 15px; }
+  .form-user-profile__text {
+    padding: 10px; }
+  .form-user-profile__input-text {
+    margin-bottom: 10px; }
+  .form-user-profile__wrap-input input {
+    padding: 10px; }
+  .form-user-profile__button {
+    margin-top: 15px; } }
 
 .profile-order__list {
   display: grid;
