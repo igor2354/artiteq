@@ -591,39 +591,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let videoPrev = document.querySelector(".usage__video-prev");
 
-    let videoContainer = document.querySelector(".usage__video-container");
-
-    function YouTubeGetID(url) {
-        var ID = '';
-        url = url.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
-        if (url[2] !== undefined) {
-            ID = url[2].split(/[^0-9a-z_\-]/i);
-            ID = ID[0];
-        }
-        else {
-            ID = url;
-        }
-        return ID;
-    }
+    let video = document.querySelector(".usage__video");
 
     if (videoPrev != null) {
-
-        let videoId = YouTubeGetID(videoContainer.dataset.videoId);
-
-        let src = "https://www.youtube.com/embed/" + videoId;
-
-        videoContainer.innerHTML = `<iframe class="usage__video" src="${src}" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"></iframe>`
-
-
         videoPrev.addEventListener("click", () => {
-            let videoFrame = document.querySelector(".usage__video");
-
             videoPrev.classList.add("active");
-            videoFrame.classList.add("active");
-
-            videoFrame.setAttribute("src", src + '?rel=0&showinfo=0' + '&autoplay=1');
+            video.setAttribute("src", video.getAttribute("src") + '?rel=0&showinfo=0' + '&autoplay=1');
         });
-    }
+    };
+
 
     //Плавный якорь
 
@@ -752,6 +728,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cookies.addEventListener("click", (e) => {
             e.preventDefault();
             document.querySelector(".popup-cookies").style.display = "none";
+            document.cookie = "REQ_COOKIE=Y; path=/; domain=" + location.hostname;
         });
     };
 }, false);
